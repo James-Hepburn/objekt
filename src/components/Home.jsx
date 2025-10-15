@@ -8,13 +8,13 @@ export default function Home() {
     <div className="home-container" style={{ backgroundImage: `url(${bgImage})` }}>
       <header className="home-header">
         <div className="left-nav">
-          <button className="nav-btn">Home</button>
+          <a href="/home"><button className="nav-btn">Home</button></a>
         </div>
         <div className="right-nav">
-          <button className="nav-btn">Work</button>
-          <button className="nav-btn">Shop</button>
-          <button className="nav-btn">About</button>
-          <button className="nav-btn">Contact</button>
+          <a href="/work"><button className="nav-btn">Work</button></a>
+          <a href="/shop"><button className="nav-btn">Shop</button></a>
+          <a href="/about"><button className="nav-btn">About</button></a>
+          <a href="/contact"><button className="nav-btn">Contact</button></a>
         </div>
       </header>
       <main style={{ height: '100vh' }}><ContentBox /></main>
