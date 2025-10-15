@@ -8,12 +8,7 @@ body, html {
 body {
   font-family: 'Helvetica Neue', sans-serif;
   color: #ffffff;
-
-  background-image: url('assets/zebra_print_background.jpg');
-  background-size: cover;        
-  background-position: center;   
-  background-repeat: no-repeat;   
-  background-attachment: fixed;
+  background-color: black;
 }
 
 .home-header {

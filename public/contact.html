@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <link rel="stylesheet" href="public/About.css">
+    <link rel="stylesheet" href="public/ContentBox.css">
+</head>
+<body>
+  <header class="home-header">
+    <div class="left-nav">
+        <button class="nav-btn" onclick="location.href='home.html'">Home</button>
+    </div>
+    <div class="right-nav">
+        <button class="nav-btn" onclick="location.href='services.html'">Services</button>
+        <button class="nav-btn" onclick="location.href='work.html'">Work</button>
+        <button class="nav-btn" onclick="location.href='shop.html'">Shop</button>
+        <button class="nav-btn" onclick="location.href='about.html'">About</button>
+        <button class="nav-btn" onclick="location.href='contact.html'">Contact</button>
+    </div>
+  </header>
+
+  <main style="height: 100vh;">
+    <div class="content-container">
+      <div class="box box1">
+        <form action="#" method="post">
+            <h2>Contact Form</h2>
+
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required />
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890" />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Your message..." required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+      </div>
+      <div class="right-column">
+        <div class="box box2">
+            <h2>Socials</h2>
+            <p>Email: example@gmail.com</p>
+            <p>Instagram: exampleUsername</p>
+            <p>Facebook: examplePage</p>
+        </div>
+        <div class="middle-section">
+          <div class="left-half">
+            <div class="box box3">
+                <img src = "assets/map.png">
+            </div>
+            <div class="bottom-row">
+              <div class="box box5-left">
+                <a href="mailto:example@gmail.com">
+                <button>
+                  <img src="assets/email.png" alt="Email" style="width:24px; height:24px;">
+                </button>
+              </a>
+              </div>
+              <div class="box box5-right">
+                <a href="tel:+1234567890">
+                  <button>
+                    <img src="assets/phone.png" alt="Call" style="width:24px; height:24px;">
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="box box4and6">
+            <h2>Address</h2>
+            <p>123 Example Street,</p>
+            <p>Toronto, ON, M1A 2B3,</p>
+            <p>Canada</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

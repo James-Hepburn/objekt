@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Work</title>
+    <link rel="stylesheet" href="public/About.css">
+    <link rel="stylesheet" href="public/ContentBox.css">
+</head>
+<body>
+  <header class="home-header">
+    <div class="left-nav">
+        <button class="nav-btn" onclick="location.href='home.html'">Home</button>
+    </div>
+    <div class="right-nav">
+        <button class="nav-btn" onclick="location.href='services.html'">Services</button>
+        <button class="nav-btn" onclick="location.href='work.html'">Work</button>
+        <button class="nav-btn" onclick="location.href='shop.html'">Shop</button>
+        <button class="nav-btn" onclick="location.href='about.html'">About</button>
+        <button class="nav-btn" onclick="location.href='contact.html'">Contact</button>
+    </div>
+  </header>
+
+  <main style="height: 100vh;">
+    <div class="content-container">
+      <div class="box box1"></div>
+      <div class="right-column">
+        <div class="box box2">
+            <p>Florus ventorum vagus per verba inanissima fluit, 
+                dum sonus levitatis circumvolvitur in aere vacuo. 
+                Nihil de nihilo loquitur, et tamen verba manent, 
+                quasi sensum aliquem simulantia. Umbrae sententiarum 
+                sine mente ludunt, saltantes inter syllabas otiosas. 
+                Ita textus procedit, nec finem nec initium quaerens, 
+                sed in perpetuum de rebus nullis garriens.</p>
+        </div>
+        <div class="middle-section">
+          <div class="left-half">
+            <div class="box box3">
+                <h2>Quantity</h2>
+                <p>0</p>
+            </div>
+            <div class="bottom-row">
+              <div class="box box5-left">
+                <button>-</button>
+              </div>
+              <div class="box box5-right">
+                <button>+</button>
+              </div>
+            </div>
+          </div>
+          <div class="box box4and6">
+            <h2>$$$</h2>
+            <p>Florus ventorum vagus per verba inanissima fluit, 
+                dum sonus levitatis circumvolvitur in aere vacuo. 
+                Nihil de nihilo loquitur, et tamen verba manent, 
+                quasi sensum aliquem simulantia.</p>
+            <button>Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+    <script>
+        const quantityDisplay = document.querySelector('.box3 p');
+        const minusBtn = document.querySelector('.box5-left button');
+        const plusBtn = document.querySelector('.box5-right button');
+
+        let quantity = 0;
+
+        function updateDisplay() {
+            quantityDisplay.textContent = quantity;
+        }
+
+        minusBtn.addEventListener('click', () => {
+            if (quantity > 0) quantity--; 
+            updateDisplay();
+        });
+
+        plusBtn.addEventListener('click', () => {
+            quantity++;
+            updateDisplay();
+        });
+
+        updateDisplay();
+    </script>
+</body>
+</html>
