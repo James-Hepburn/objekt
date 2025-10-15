@@ -1,0 +1,52 @@
+.landing-container {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  background-color: black;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/zebra_print_background.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+.company-name {
+  z-index: 2;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.black-box {
+  z-index: 2;
+  background-color: #000000; 
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100px;     
+  height: 100px;
+  max-width: 90%;    
+  max-height: 70%;   
+  transform-origin: center; 
+  border-radius: 8px;      
+}
+
+.motto {
+  text-align: center;
+  line-height: 1.5;
+  color: #ffffff;
+}
