@@ -167,4 +167,25 @@ main {
   main {
     margin-top: 60px;        
   }
+
+  .site-footer {
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .site-footer p {
+    margin: 0.5rem 0;
+  }
+
+  .site-footer a {
+    display: inline-block;
+    margin: 0.3rem 0;
+    padding: 0.5rem 1rem;
+    width: 100%;       
+    text-align: center;
+    border-radius: 4px;
+    background-color: #5bc0f8;
+    color: white;
+    text-decoration: none;
+  }
 }
