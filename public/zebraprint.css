@@ -124,6 +124,18 @@ main {
   margin-top: 70px;
 }
 
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #111;
+  color: #fff;
+  font-size: 0.9rem;
+}
+.site-footer a {
+  color: #5bc0f8;
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   .home-header {
     padding: 0.5rem 1rem;

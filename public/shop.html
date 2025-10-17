@@ -64,35 +64,40 @@
     </div>
   </main>
 
-    <script>
-      const quantityDisplay = document.querySelector('.box3 p');
-      const minusBtn = document.querySelector('.box5-left button');
-      const plusBtn = document.querySelector('.box5-right button');
-      const menuToggle = document.getElementById("menuToggle");
-      const rightNav = document.getElementById("rightNav");
+  <footer class="site-footer">
+    <p>Questions? <a href="/contact">Contact us</a></p>
+    <p>Email: example@gmail.com</p>
+  </footer>
 
-      menuToggle.addEventListener("click", () => {
-        rightNav.classList.toggle("open");
-        menuToggle.textContent = rightNav.classList.contains("open") ? "✕" : "☰";
-      });
+  <script>
+    const quantityDisplay = document.querySelector('.box3 p');
+    const minusBtn = document.querySelector('.box5-left button');
+    const plusBtn = document.querySelector('.box5-right button');
+    const menuToggle = document.getElementById("menuToggle");
+    const rightNav = document.getElementById("rightNav");
 
-      let quantity = 0;
+    menuToggle.addEventListener("click", () => {
+      rightNav.classList.toggle("open");
+      menuToggle.textContent = rightNav.classList.contains("open") ? "✕" : "☰";
+    });
 
-      function updateDisplay() {
-        quantityDisplay.textContent = quantity;
-      }
+    let quantity = 0;
 
-      minusBtn.addEventListener('click', () => {
-        if (quantity > 0) quantity--; 
-        updateDisplay();
-      });
+    function updateDisplay() {
+      quantityDisplay.textContent = quantity;
+    }
 
-      plusBtn.addEventListener('click', () => {
-        quantity++;
-        updateDisplay();
-      });
-
+    minusBtn.addEventListener('click', () => {
+      if (quantity > 0) quantity--; 
       updateDisplay();
-    </script>
+    });
+
+    plusBtn.addEventListener('click', () => {
+      quantity++;
+      updateDisplay();
+    });
+
+    updateDisplay();
+  </script>
 </body>
 </html>
