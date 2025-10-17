@@ -38,6 +38,12 @@ export default function Landing() {
           <p>Designs to keep</p>
         </div>
       </motion.div>
+      <motion.div
+        className="background"
+        initial={{ opacity: 0.3 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 5 }}
+      />
     </div>
   );
 }

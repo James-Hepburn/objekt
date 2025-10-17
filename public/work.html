@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Work</title>
-    <link rel="stylesheet" href="/About.css">
-    <link rel="stylesheet" href="/ContentBox.css">
+    <link rel="stylesheet" href="/blackbackground.css">
+    <link rel="stylesheet" href="/contentbox.css">
 </head>
 <body>
   <header class="home-header">
     <div class="left-nav">
-        <button class="nav-btn" onclick="location.href='home.html'">Home</button>
+      <button class="nav-btn" onclick="location.href='home.html'">Home</button>
     </div>
-    <div class="right-nav">
-        <button class="nav-btn" onclick="location.href='services.html'">Services</button>
-        <button class="nav-btn" onclick="location.href='work.html'">Work</button>
-        <button class="nav-btn" onclick="location.href='shop.html'">Shop</button>
-        <button class="nav-btn" onclick="location.href='about.html'">About</button>
-        <button class="nav-btn" onclick="location.href='contact.html'">Contact</button>
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <div class="right-nav" id="rightNav">
+      <button class="nav-btn" onclick="location.href='services.html'">Services</button>
+      <button class="nav-btn" onclick="location.href='work.html'">Work</button>
+      <button class="nav-btn" onclick="location.href='shop.html'">Shop</button>
+      <button class="nav-btn" onclick="location.href='about.html'">About</button>
+      <button class="nav-btn" onclick="location.href='contact.html'">Contact</button>
     </div>
   </header>
 
@@ -38,5 +41,15 @@
       </div>
     </div>
   </main>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const rightNav = document.getElementById("rightNav");
+
+    menuToggle.addEventListener("click", () => {
+      rightNav.classList.toggle("open");
+      menuToggle.textContent = rightNav.classList.contains("open") ? "✕" : "☰";
+    });
+  </script>
 </body>
 </html>
