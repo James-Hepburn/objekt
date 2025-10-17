@@ -137,6 +137,11 @@ main {
 }
 
 @media (max-width: 768px) {
+  body {
+    background-attachment: scroll; 
+    background-position: center top; 
+  }
+
   .home-header {
     padding: 0.5rem 1rem;
   }
