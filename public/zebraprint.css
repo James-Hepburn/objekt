@@ -123,3 +123,36 @@ main {
   height: 100vh;
   margin-top: 70px;
 }
+
+@media (max-width: 768px) {
+  .home-header {
+    padding: 0.5rem 1rem;
+  }
+
+  .left-nav {
+    gap: 0.5rem;
+  }
+
+  .right-nav {
+    width: 150px;          
+    top: 50px;              
+    padding: 0.5rem;
+    border-radius: 0 0 0 6px;
+  }
+
+  .nav-btn {
+    padding: 0.4rem 0.8rem; 
+    font-size: 0.85rem;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 1.5rem;
+    width: 35px;
+    height: 35px;
+  }
+
+  main {
+    margin-top: 60px;        
+  }
+}
