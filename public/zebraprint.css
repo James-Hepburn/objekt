@@ -158,14 +158,15 @@ main {
 }
 
 .site-footer a {
-  display: inline-block;
-  margin: 0.8rem 0;
+  display: block; /* make it stack vertically on desktop */
+  margin: 1rem auto; /* center it horizontally */
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
   background-color: #5bc0f8;
   color: white;
   text-decoration: none;
   font-weight: bold;
+  width: fit-content;
 }
 
 .site-footer a:hover {
