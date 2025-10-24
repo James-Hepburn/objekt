@@ -159,7 +159,7 @@ button[type="submit"]:hover {
   background-color: #3aa0e8;
 }
 
-@media screen and (max-width: 900px) {
+/* @media screen and (max-width: 900px) {
   .content-container {
     flex-direction: column !important;
     width: 95% !important;
@@ -191,4 +191,4 @@ button[type="submit"]:hover {
     width: 100% !important;
     height: auto !important;
   }
-}
+} */
