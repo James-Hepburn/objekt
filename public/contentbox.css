@@ -159,7 +159,6 @@ button[type="submit"]:hover {
   background-color: #3aa0e8;
 }
 
-/* Force layout stack for iPhones */
 @media screen and (max-width: 900px) {
   .content-container {
     flex-direction: column !important;
