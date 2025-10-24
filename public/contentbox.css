@@ -191,47 +191,4 @@ button[type="submit"]:hover {
     width: 100% !important;
     height: auto !important;
   }
-
-  .box {
-    padding: 1rem !important;
-  }
-
-  .box h2 {
-    font-size: 1.1rem !important;
-    margin-bottom: 0.5rem !important;
-    text-align: center;
-  }
-
-  .box p {
-    font-size: 0.9rem !important;
-    line-height: 1.4 !important;
-    margin-bottom: 0.75rem !important;
-    text-align: center;
-  }
-
-  form {
-    width: 100% !important;
-    padding: 0.5rem !important;
-  }
-
-  form h2 {
-    font-size: 1.2rem !important;
-    text-align: center;
-  }
-
-  label {
-    font-size: 0.9rem !important;
-  }
-
-  input,
-  textarea {
-    font-size: 0.9rem !important;
-    padding: 0.6rem !important;
-  }
-
-  button,
-  button[type="submit"] {
-    font-size: 0.95rem !important;
-    padding: 0.6rem 1rem !important;
-  }
 }
