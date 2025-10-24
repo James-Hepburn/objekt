@@ -135,21 +135,20 @@
   }
 
   .gift-box {
-    width: 50vw;
-    height: 20vw;
+    width: 65vw;
+    height: 45vw;
     margin-top: 20vh;
   }
 
   .gift-lid {
-    width: 55vw;
+    width: 67vw;
     height: 10vw;
     left: -1vw;
-    top: 0;
   }
 
   .gift-base {
-    width: 50vw;
-    height: 20vw;
+    width: 65vw;
+    height: 35vw;
   }
 
   .company-name {
