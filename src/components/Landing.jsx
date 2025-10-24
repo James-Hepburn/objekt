@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import "./Landing.css";
-import backgroundImg from "../assets/zebra_print_background.jpg"; // your image
+import backgroundImg from "../assets/zebra_print_background.jpg"; 
 
 export default function Landing() {
   const lidControls = useAnimation();
@@ -32,9 +32,11 @@ export default function Landing() {
           transition: { duration: 1.2, ease: "easeInOut" },
         });
 
+        const isMobile = window.innerWidth <= 768;
+
         nameTrackControls.start({
           opacity: 1,
-          y: -220, 
+          y: isMobile ? -100 : -220,
           transition: { duration: 2, ease: "easeOut", delay: 0.1 },
         });
 
@@ -54,7 +56,7 @@ export default function Landing() {
           })
           .then(() => {
             baseControls.start({
-              width: "100vw",
+              width: isMobile ? "110vw" : "100vw",
               left: "50%",
               x: "-50%",
               transition: { duration: 2, ease: "easeInOut" },
@@ -112,7 +114,7 @@ export default function Landing() {
         {}
         <motion.div
           className="gift-base"
-          initial={{ width: 520, left: "50%", x: "-50%" }}
+          initial={{ left: "50%", x: "-50%" }}
           animate={baseControls}
           style={{ zIndex: 150 }}
         >
