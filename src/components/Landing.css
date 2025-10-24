@@ -16,17 +16,18 @@
   background-image: url('../assets/zebra_print_background.jpg');
   background-size: cover;
   background-position: center;
-  z-index: 0; 
+  z-index: 0;
   opacity: 0;
 }
 
+/* Gift Box — Base Desktop Sizes */
 .gift-box {
   position: relative;
   width: 520px;
   height: 380px;
   margin-bottom: 2rem;
   margin-top: 100px;
-  z-index: 100; 
+  z-index: 100;
 }
 
 .gift-lid {
@@ -48,7 +49,7 @@
 .gift-base {
   position: absolute;
   bottom: 0;
-  left: 0; 
+  left: 0;
   width: 520px;
   height: 280px;
   background-color: black;
@@ -57,15 +58,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .company-name {
   font-size: 4rem;
   letter-spacing: 2px;
   text-align: center;
-  color: black;                 
-  text-shadow: 0 2px 6px rgba(0,0,0,0.45);
+  color: black;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
   margin: 0;
 }
 
@@ -81,7 +82,7 @@
 .bow-right {
   width: 70px;
   height: 40px;
-  background-color: transparent; 
+  background-color: transparent;
   border: 6px solid black;
   border-radius: 50%;
 }
@@ -124,5 +125,71 @@
   }
   50% {
     transform: translateY(6px);
+  }
+}
+
+/* --------------------------------------------- */
+/* ✅ RESPONSIVE MOBILE STYLES */
+/* --------------------------------------------- */
+
+@media (max-width: 768px) {
+  .gift-box {
+    width: 80vw;
+    height: 55vw;
+    margin-top: 60px;
+  }
+
+  .gift-lid {
+    width: 82vw;
+    height: 12vw;
+    left: -1vw;
+  }
+
+  .gift-base {
+    width: 80vw;
+    height: 43vw;
+  }
+
+  .company-name {
+    font-size: 2.4rem;
+    letter-spacing: 1px;
+  }
+
+  .motto {
+    font-size: 1.1rem;
+  }
+
+  .scroll-text {
+    font-size: 1.4rem;
+  }
+
+  .down-arrow {
+    font-size: 1.4rem;
+  }
+
+  .bow-left,
+  .bow-right {
+    width: 40px;
+    height: 25px;
+    border: 4px solid black;
+  }
+}
+
+/* Small phones (under 480px) */
+@media (max-width: 480px) {
+  .company-name {
+    font-size: 1.8rem;
+  }
+
+  .motto {
+    font-size: 1rem;
+  }
+
+  .scroll-text {
+    font-size: 1.2rem;
+  }
+
+  .gift-box {
+    margin-top: 40px;
   }
 }
