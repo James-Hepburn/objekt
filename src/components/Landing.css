@@ -128,68 +128,63 @@
   }
 }
 
-/* --------------------------------------------- */
-/* ✅ RESPONSIVE MOBILE STYLES */
-/* --------------------------------------------- */
-
 @media (max-width: 768px) {
+  .landing-page {
+    justify-content: flex-start;
+    padding-top: 8vh;
+  }
+
   .gift-box {
-    width: 80vw;
-    height: 55vw;
+    width: 85vw;
+    height: 50vw;
     margin-top: 60px;
   }
 
   .gift-lid {
-    width: 82vw;
-    height: 12vw;
+    width: 87vw;
+    height: 10vw;
     left: -1vw;
+    top: 0;
   }
 
   .gift-base {
-    width: 80vw;
-    height: 43vw;
+    width: 85vw;
+    height: 40vw;
   }
 
   .company-name {
-    font-size: 2.4rem;
-    letter-spacing: 1px;
+    font-size: 2.5rem;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .name-track {
+    left: 50% !important;
+    transform: translateX(-50%);
+    bottom: 60px !important;
   }
 
   .motto {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    padding: 0 1rem;
   }
 
   .scroll-text {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    margin-top: 1rem;
   }
 
   .down-arrow {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .bow-left,
   .bow-right {
-    width: 40px;
-    height: 25px;
+    width: 36px;
+    height: 22px;
     border: 4px solid black;
-  }
-}
-
-/* Small phones (under 480px) */
-@media (max-width: 480px) {
-  .company-name {
-    font-size: 1.8rem;
-  }
-
-  .motto {
-    font-size: 1rem;
-  }
-
-  .scroll-text {
-    font-size: 1.2rem;
-  }
-
-  .gift-box {
-    margin-top: 40px;
+    top: -35px;
   }
 }
