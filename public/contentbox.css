@@ -158,3 +158,38 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: #3aa0e8;
 }
+
+/* Force layout stack for iPhones */
+@media screen and (max-width: 900px) {
+  .content-container {
+    flex-direction: column !important;
+    width: 95% !important;
+    margin: 40px auto !important;
+    height: auto !important;
+  }
+
+  .right-column,
+  .middle-section,
+  .bottom-row,
+  .left-half,
+  .box4and6 {
+    flex-direction: column !important;
+  }
+
+  .box,
+  .box1,
+  .box2,
+  .box3,
+  .box4and6,
+  .box5-left,
+  .box5-right {
+    height: auto !important;
+    width: 100% !important;
+  }
+
+  .box3 img {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+}
