@@ -37,8 +37,7 @@
   width: 560px;
   height: 130px;
   background-color: black;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -53,12 +52,12 @@
   width: 520px;
   height: 280px;
   background-color: black;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  z-index: 150;
 }
 
 .company-name {
@@ -137,13 +136,14 @@
   .gift-box {
     width: 65vw;
     height: 45vw;
-    margin-top: 20vh;
+    margin-top: 30vh;
   }
 
   .gift-lid {
     width: 70vw;
     height: 10vw;
     left: -2.25vw;
+    top: 1.5vw;
   }
 
   .gift-base {
