@@ -120,40 +120,6 @@ main {
   margin-top: 70px;
 }
 
-.site-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #111;
-  color: #fff;
-  padding: 2rem 1rem;
-  text-align: center;
-  width: 100%;
-  position: relative;
-  z-index: 1; /* keeps it above the background image */
-}
-
-.site-footer p {
-  margin: 0.5rem 0;
-}
-
-.site-footer a {
-  display: block; /* make it stack vertically on desktop */
-  margin: 1rem auto; /* center it horizontally */
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
-  background-color: #5bc0f8;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  width: fit-content;
-}
-
-.site-footer a:hover {
-  background-color: #3aa0e8;
-}
-
 @media (max-width: 768px) {
   .home-header {
     padding: 0.5rem 1rem;
@@ -184,14 +150,5 @@ main {
 
   main {
     margin-top: 60px;        
-  }
-
-  .site-footer {
-    padding: 2.5rem 1rem;
-  }
-
-  .site-footer a {
-    width: 70%;
-    max-width: 300px;
   }
 }
