@@ -20,10 +20,8 @@ export default function Landing() {
 
       if (boxTop < triggerPoint) {
         lidControls.start({
-          rotateX: -90,
-          rotateY: 15,
-          y: -150,
-          transition: { duration: 2, ease: "easeInOut" },
+          y: "-120vh",
+          transition: { duration: 2.5, ease: "easeInOut" },
         });
 
         messageControls.start({
