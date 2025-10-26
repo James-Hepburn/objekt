@@ -11,7 +11,7 @@
 }
 
 .background-image {
-  position: absolute;
+  position: fixed;
   inset: 0;
   background-image: url('/zebra_print_background.jpg');
   background-size: cover;
@@ -55,8 +55,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: hidden;          
   z-index: 150;
+  transform-origin: center center;
 }
 
 .company-name {

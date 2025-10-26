@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom"; 
-
+import { useNavigate } from "react-router-dom";
 import "./ZebraPage.css";
 import "./CommonStyles.css";
 
@@ -76,10 +75,7 @@ export default function Home() {
       <footer className="site-footer">
         <p>
           Questions?{" "}
-          <button
-            onClick={() => navigate("/contact")}
-            className="contact-btn"
-          >
+          <button onClick={() => navigate("/contact")} className="contact-btn">
             Contact us
           </button>
         </p>

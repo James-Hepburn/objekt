@@ -2,6 +2,7 @@ import { useRef, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import "./Landing.css";
+import "./CommonStyles.css";
 
 export default function Landing() {
   const navigate = useNavigate();
@@ -9,9 +10,10 @@ export default function Landing() {
   const messageControls = useAnimation();
   const nameTrackControls = useAnimation();
   const bgControls = useAnimation();
-  const mottoControls = useAnimation();
+  const mottoFadeControls = useAnimation();
   const baseControls = useAnimation();
   const giftRef = useRef(null);
+  const baseRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,31 +41,64 @@ export default function Landing() {
           transition: { duration: 2, ease: "easeOut", delay: 0.1 },
         });
 
-        bgControls.start({
-          opacity: 1,
-          transition: { duration: 2.2, ease: "easeInOut", delay: 2.2 },
-        });
         nameTrackControls.start({
           opacity: 0,
           transition: { duration: 2.2, ease: "easeInOut", delay: 2.2 },
         });
 
-        mottoControls
+        mottoFadeControls
           .start({
             opacity: 1,
-            transition: { duration: 1.8, ease: "easeInOut", delay: 4.6 },
+            transition: { duration: 1.5, ease: "easeInOut", delay: 4.0 },
           })
           .then(() => {
-            baseControls.start({
-              width: isMobile ? "110vw" : "100vw",
-              left: "50%",
-              x: "-50%",
-              transition: { duration: 2, ease: "easeInOut" },
+            bgControls.start({
+              opacity: 1,
+              transition: { duration: 3, ease: "easeInOut" },
+            }).then(() => {
+              bgControls.set({ opacity: 1 });
             });
 
             setTimeout(() => {
-              navigate("/home");
-            }, 2200);
+              mottoFadeControls.start({
+                opacity: 0,
+                transition: { duration: 1.2, ease: "easeInOut" },
+              });
+
+              const grid = document.getElementById("grid-placeholder");
+              const giftBase = baseRef.current;
+              if (!grid || !giftBase) return;
+
+              const gridRect = grid.getBoundingClientRect();
+              const giftRect = giftBase.getBoundingClientRect();
+              const scaleX = gridRect.width / giftRect.width;
+              const scaleY = gridRect.height / giftRect.height;
+
+              baseControls
+                .start({
+                  originX: 0.5,
+                  originY: 0.5,
+                  scaleX,
+                  scaleY,
+                  borderRadius: "0px",
+                  transition: {
+                    duration: 3.5,
+                    ease: [0.22, 1, 0.36, 1],
+                  },
+                })
+                .then(() => {
+                  baseControls.start({
+                    backgroundColor: "#ffffff",
+                    border: "2px solid #000000",
+                    borderRadius: "0px",
+                    transition: { duration: 1.5, ease: "easeInOut" },
+                  });
+
+                  setTimeout(() => {
+                    navigate("/home");
+                  }, 1600);
+                });
+            }, 2000);
           });
 
         window.removeEventListener("scroll", handleScroll);
@@ -72,37 +107,81 @@ export default function Landing() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lidControls, messageControls, nameTrackControls, bgControls, mottoControls, baseControls]);
+  }, [
+    lidControls,
+    messageControls,
+    nameTrackControls,
+    bgControls,
+    mottoFadeControls,
+    baseControls,
+    navigate,
+  ]);
 
   return (
-    <motion.div className="landing-page">
+    <motion.div
+      className="landing-page"
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1.2, ease: "easeInOut" }}
+    >
       {}
-      <motion.div className="background-image" initial={{ opacity: 0 }} animate={bgControls} />
+      <motion.div
+        className="background-image"
+        initial={{ opacity: 0 }}
+        animate={bgControls}
+      />
 
-      {}
+      <div
+        id="grid-placeholder"
+        className="content-container"
+        style={{
+          visibility: "hidden",
+          position: "absolute",
+          top: 0,
+          left: 0,
+          pointerEvents: "none",
+        }}
+      >
+        <div className="box box1"></div>
+        <div className="right-column">
+          <div className="box box2"></div>
+          <div className="merged-top"></div>
+          <div className="merged-bottom"></div>
+          <div className="middle-section">
+            <div className="left-half">
+              <div className="box box3"></div>
+              <div className="bottom-row">
+                <div className="box box5-left"></div>
+                <div className="box box5-right"></div>
+              </div>
+            </div>
+            <div className="box box4and6"></div>
+          </div>
+        </div>
+      </div>
+
       <div className="gift-box" ref={giftRef}>
-
-        {}
         <motion.div
           className="name-track"
-          initial={{ opacity: 1, y: 40 }} 
+          initial={{ opacity: 1, y: 40 }}
           animate={nameTrackControls}
           style={{
             position: "absolute",
             left: "20%",
-            bottom: 80, 
+            bottom: 80,
             zIndex: 300,
           }}
         >
-
           <h1 className="company-name">C. Haus Objekt</h1>
         </motion.div>
 
-        {}
         <motion.div
           className="gift-lid"
           animate={lidControls}
-          style={{ transformOrigin: "left bottom", perspective: 800, zIndex: 200 }}
+          style={{
+            transformOrigin: "left bottom",
+            perspective: 800,
+            zIndex: 200,
+          }}
         >
           <div className="bow">
             <div className="bow-left" />
@@ -110,14 +189,33 @@ export default function Landing() {
           </div>
         </motion.div>
 
-        {}
         <motion.div
           className="gift-base"
-          initial={{ left: "50%", x: "-50%" }}
+          ref={baseRef}
+          initial={{
+            position: "absolute",
+            bottom: 0,
+            left: "50%",
+            x: "-50%",
+            originX: 0.5,
+            originY: 0.5,
+            scaleX: 1,
+            scaleY: 1,
+            borderRadius: 20,
+          }}
           animate={baseControls}
-          style={{ zIndex: 150 }}
+          style={{
+            zIndex: 150,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
         >
-          <motion.div className="motto" initial={{ opacity: 0 }} animate={mottoControls}>
+          <motion.div
+            className="motto"
+            initial={{ opacity: 0 }}
+            animate={mottoFadeControls}
+          >
             <p>Timeless culture</p>
             <p>Objects to gift</p>
             <p>Designs to keep</p>
@@ -125,11 +223,18 @@ export default function Landing() {
         </motion.div>
       </div>
 
-      {}
-      <motion.p className="scroll-text" initial={{ opacity: 1 }} animate={messageControls}>
-        Scroll to Enter
+      <motion.p
+        className="scroll-text"
+        initial={{ opacity: 1 }}
+        animate={messageControls}
+      >
+        Scroll or Click to Open
       </motion.p>
-      <motion.div className="down-arrow" initial={{ opacity: 1 }} animate={messageControls}>
+      <motion.div
+        className="down-arrow"
+        initial={{ opacity: 1 }}
+        animate={messageControls}
+      >
         ↓
       </motion.div>
     </motion.div>
