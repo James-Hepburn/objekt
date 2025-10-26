@@ -13,14 +13,13 @@
 .background-image {
   position: absolute;
   inset: 0;
-  background-image: url('../assets/zebra_print_background.jpg');
+  background-image: url('/zebra_print_background.jpg');
   background-size: cover;
   background-position: center;
   z-index: 0;
   opacity: 0;
 }
 
-/* Gift Box — Base Desktop Sizes */
 .gift-box {
   position: relative;
   width: 520px;

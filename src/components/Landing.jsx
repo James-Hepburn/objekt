@@ -1,9 +1,10 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import "./Landing.css";
-import backgroundImg from "../assets/zebra_print_background.jpg"; 
 
 export default function Landing() {
+  const navigate = useNavigate();
   const lidControls = useAnimation();
   const messageControls = useAnimation();
   const nameTrackControls = useAnimation();
@@ -61,7 +62,7 @@ export default function Landing() {
             });
 
             setTimeout(() => {
-              window.location.href = "/home.html";
+              navigate("/home");
             }, 2200);
           });
 

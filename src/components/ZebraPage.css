@@ -1,0 +1,24 @@
+.home-page {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.home-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url('/zebra_print_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.home-page,
+main,
+header,
+footer {
+  position: relative;
+  z-index: 1;
+}

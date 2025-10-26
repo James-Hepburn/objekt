@@ -1,0 +1,28 @@
+html, body {
+  background-color: #000;
+}
+
+.other-pages::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: -1;
+  opacity: 0;
+  animation: fadeInBlack 1.2s ease-in forwards;
+}
+
+@keyframes fadeInBlack {
+  to {
+    opacity: 1;
+  }
+}
+
+.home-page,
+body,
+main,
+header,
+footer {
+  position: relative;
+  z-index: 1;
+}
