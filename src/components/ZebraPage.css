@@ -29,3 +29,86 @@ footer {
   position: relative;
   z-index: 1;
 }
+
+.box2 {
+  position: relative;
+  overflow: hidden;
+}
+
+.mailing-list-full {
+  position: absolute;
+  inset: 0;
+  background: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: inherit;
+}
+
+.mailing-list-content {
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.mailing-list-full h2 {
+  margin-bottom: 0.5rem;
+}
+
+.mailing-list-full p {
+  margin-bottom: 1.25rem;
+}
+
+.mailing-list-full form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.mailing-list-full input {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.mailing-list-full button[type="submit"] {
+  background: black;
+  color: white;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.mailing-list-full button[type="submit"]:hover {
+  background: #333;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  z-index: 10; 
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
+  background-color: black; 
+  color: white;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background-color: #333;
+}

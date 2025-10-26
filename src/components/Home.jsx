@@ -1,12 +1,35 @@
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion"; 
+import React, { useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 import "./ZebraPage.css";
 import "./CommonStyles.css";
 
+let hasShownMailingList = false;
+
 export default function Home() {
   const navigate = useNavigate();
-  const [menuOpen, setMenuOpen] = React.useState(false);
+  const location = useLocation();
+
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [showMailingList, setShowMailingList] = useState(false);
+  const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    if (!hasShownMailingList) {
+      setShowMailingList(true);
+      hasShownMailingList = true;
+    }
+  }, [location]);
+
+  const handleCloseMailingList = () => {
+    setShowMailingList(false);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Email submitted:", email);
+    setShowMailingList(false);
+  };
 
   return (
     <motion.div
@@ -43,10 +66,48 @@ export default function Home() {
       <main>
         <div className="content-container">
           <div className="box box1"></div>
+
           <div className="right-column">
-            <div className="box box2"></div>
+            <div className="box box2">
+              {showMailingList ? (
+                <motion.div
+                  className="mailing-list-full"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <button
+                    className="close-btn"
+                    onClick={handleCloseMailingList}
+                    aria-label="Close mailing list"
+                  >
+                    ✕
+                  </button>
+
+                  <div className="mailing-list-content">
+                    <h2>Join Our Mailing List</h2>
+                    <p>Stay up to date with new releases, offers, and news.</p>
+                    <form onSubmit={handleSubmit}>
+                      <input
+                        type="email"
+                        placeholder="Enter your email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                      />
+                      <button type="submit">Sign Up</button>
+                    </form>
+                  </div>
+                </motion.div>
+              ) : (
+                <div className="box2-placeholder"></div>
+              )}
+            </div>
+
             <div className="merged-top"></div>
             <div className="merged-bottom"></div>
+
             <div className="middle-section">
               <div className="left-half">
                 <div className="box box3"></div>
