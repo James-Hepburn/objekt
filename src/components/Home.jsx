@@ -1,26 +1,21 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion"; 
 import "./ZebraPage.css";
 import "./CommonStyles.css";
 
 export default function Home() {
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const menuToggle = document.getElementById("menuToggle");
-    const rightNav = document.getElementById("rightNav");
-
-    const handleClick = () => {
-      rightNav.classList.toggle("open");
-      menuToggle.textContent = rightNav.classList.contains("open") ? "✕" : "☰";
-    };
-
-    menuToggle.addEventListener("click", handleClick);
-    return () => menuToggle.removeEventListener("click", handleClick);
-  }, []);
+  const [menuOpen, setMenuOpen] = React.useState(false);
 
   return (
-    <div className="home-page">
+    <motion.div
+      className="home-page"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.8, ease: "easeInOut" }}
+    >
       <header className="home-header">
         <div className="left-nav">
           <button className="nav-btn" onClick={() => navigate("/home")}>
@@ -28,26 +23,20 @@ export default function Home() {
           </button>
         </div>
 
-        <button className="menu-toggle" id="menuToggle">
-          ☰
+        <button
+          className="menu-toggle"
+          id="menuToggle"
+          onClick={() => setMenuOpen((prev) => !prev)}
+        >
+          {menuOpen ? "✕" : "☰"}
         </button>
 
-        <div className="right-nav" id="rightNav">
-          <button className="nav-btn" onClick={() => navigate("/services")}>
-            Services
-          </button>
-          <button className="nav-btn" onClick={() => navigate("/work")}>
-            Work
-          </button>
-          <button className="nav-btn" onClick={() => navigate("/shop")}>
-            Shop
-          </button>
-          <button className="nav-btn" onClick={() => navigate("/about")}>
-            About
-          </button>
-          <button className="nav-btn" onClick={() => navigate("/contact")}>
-            Contact
-          </button>
+        <div className={`right-nav ${menuOpen ? "open" : ""}`} id="rightNav">
+          <button className="nav-btn" onClick={() => navigate("/services")}>Services</button>
+          <button className="nav-btn" onClick={() => navigate("/work")}>Work</button>
+          <button className="nav-btn" onClick={() => navigate("/shop")}>Shop</button>
+          <button className="nav-btn" onClick={() => navigate("/about")}>About</button>
+          <button className="nav-btn" onClick={() => navigate("/contact")}>Contact</button>
         </div>
       </header>
 
@@ -93,6 +82,6 @@ export default function Home() {
           </a>
         </div>
       </footer>
-    </div>
+    </motion.div>
   );
 }

@@ -504,12 +504,11 @@ button[type="submit"]:hover {
     height: 35px;
   }
 
-  .home-page main {
-    margin-top: 60px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding-top: 2rem;
+  .home-page main, .other-pages main {
+    margin-top: 0;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px); 
   }
 
   .content-container {

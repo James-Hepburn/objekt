@@ -2,6 +2,13 @@
   position: relative;
   min-height: 100vh;
   overflow-x: hidden;
+  background-color: white;
+  background-image: url('/zebra_print_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  will-change: background-image;
 }
 
 .home-page::before {

@@ -16,6 +16,8 @@ export default function Landing() {
   const baseRef = useRef(null);
 
   useEffect(() => {
+    import("./Home");
+    
     const handleScroll = () => {
       if (!giftRef.current) return;
       const boxTop = giftRef.current.getBoundingClientRect().top;
@@ -80,23 +82,39 @@ export default function Landing() {
                   originY: 0.5,
                   scaleX,
                   scaleY,
-                  borderRadius: "0px",
+                  borderRadius: "20px",
                   transition: {
                     duration: 3.5,
                     ease: [0.22, 1, 0.36, 1],
                   },
                 })
                 .then(() => {
-                  baseControls.start({
-                    backgroundColor: "#ffffff",
-                    border: "2px solid #000000",
-                    borderRadius: "0px",
-                    transition: { duration: 1.5, ease: "easeInOut" },
-                  });
-
-                  setTimeout(() => {
-                    navigate("/home");
-                  }, 1600);
+                  baseControls
+                    .start({
+                      backgroundColor: [
+                        "#000000", "#0a0a0a", "#141414", "#1f1f1f", "#292929",
+                        "#333333", "#3d3d3d", "#474747", "#515151", "#5b5b5b",
+                        "#656565", "#6f6f6f", "#797979", "#838383", "#8d8d8d",
+                        "#979797", "#a1a1a1", "#ababab", "#b5b5b5", "#bfbfbf",
+                        "#c9c9c9", "#d3d3d3", "#dddddd", "#e7e7e7", "#f1f1f1",
+                        "#ffffff",
+                      ],
+                      border: "2px solid #000000",
+                      borderRadius: [
+                        "20px", "18px", "16px", "14px", "12px",
+                        "10px", "8px", "6px", "4px", "2px", "0px",
+                      ],
+                      transition: {
+                        duration: 4, 
+                        ease: "linear",
+                        times: Array.from({ length: 26 }, (_, i) => i / 25),
+                      },
+                    })
+                    .then(() => {
+                      setTimeout(() => {
+                        navigate("/home");
+                      }, 200);
+                    });
                 });
             }, 2000);
           });
