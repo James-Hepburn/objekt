@@ -17,7 +17,7 @@ export default function Landing() {
 
   useEffect(() => {
     import("./Home");
-    
+
     const handleScroll = () => {
       if (!giftRef.current) return;
       const boxTop = giftRef.current.getBoundingClientRect().top;
@@ -120,11 +120,17 @@ export default function Landing() {
           });
 
         window.removeEventListener("scroll", handleScroll);
+        window.removeEventListener("click", handleScroll);
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("click", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("click", handleScroll);
+    }
   }, [
     lidControls,
     messageControls,
