@@ -40,9 +40,7 @@ export default function Work() {
       {}
       <header className="home-header">
         <div className="left-nav">
-          <button className="nav-btn" onClick={() => navigate("/home")}>
-            Home
-          </button>
+          <div className="logo-placeholder" onClick={() => navigate("/home")}></div>
         </div>
 
         <button className="menu-toggle" id="menuToggle">

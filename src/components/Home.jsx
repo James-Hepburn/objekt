@@ -41,9 +41,7 @@ export default function Home() {
     >
       <header className="home-header">
         <div className="left-nav">
-          <button className="nav-btn" onClick={() => navigate("/home")}>
-            Home
-          </button>
+          <div className="logo-placeholder" onClick={() => navigate("/home")}></div>
         </div>
 
         <button
@@ -87,7 +85,6 @@ export default function Home() {
 
                   <div className="mailing-list-content">
                     <h2>Join Our Mailing List</h2>
-                    <p>Stay up to date with new releases, offers, and news.</p>
                     <form onSubmit={handleSubmit}>
                       <input
                         type="email"

@@ -54,52 +54,54 @@ export default function Landing() {
             transition: { duration: 1.5, ease: "easeInOut", delay: 4.0 },
           })
           .then(() => {
-            bgControls.start({
-              opacity: 1,
-              transition: { duration: 3, ease: "easeInOut" },
-            }).then(() => {
-              bgControls.set({ opacity: 1 });
-            });
-
-            setTimeout(() => {
-              mottoFadeControls.start({
-                opacity: 0,
-                transition: { duration: 1.2, ease: "easeInOut" },
+            bgControls
+              .start({
+                opacity: 1,
+                transition: { duration: 3, ease: "easeInOut" },
+              })
+              .then(() => {
+                bgControls.set({ opacity: 1 });
               });
 
-              const grid = document.getElementById("grid-placeholder");
-              const giftBase = baseRef.current;
-              if (!grid || !giftBase) return;
-
-              const gridRect = grid.getBoundingClientRect();
-              const giftRect = giftBase.getBoundingClientRect();
-              const scaleX = gridRect.width / giftRect.width;
-              const scaleY = gridRect.height / giftRect.height;
-
-              baseControls
+            setTimeout(() => {
+              mottoFadeControls
                 .start({
-                  originX: 0.5,
-                  originY: 0.5,
-                  scaleX,
-                  scaleY,
-                  borderRadius: "20px",
-                  transition: {
-                    duration: 3.5,
-                    ease: [0.22, 1, 0.36, 1],
-                  },
+                  opacity: 0,
+                  transition: { duration: 0.8, ease: "easeInOut" },
                 })
                 .then(() => {
+                  const grid = document.getElementById("grid-placeholder");
+                  const giftBase = baseRef.current;
+                  if (!grid || !giftBase) return;
+
+                  const gridRect = grid.getBoundingClientRect();
+                  const giftRect = giftBase.getBoundingClientRect();
+                  const scaleX = gridRect.width / giftRect.width;
+                  const scaleY = gridRect.height / giftRect.height;
+
                   baseControls
                     .start({
+                      originX: 0.5,
+                      originY: 0.5,
+                      scaleX,
+                      scaleY,
                       border: "2px solid #000000",
                       borderRadius: [
-                        "20px", "18px", "16px", "14px", "12px",
-                        "10px", "8px", "6px", "4px", "2px", "0px",
+                        "20px",
+                        "18px",
+                        "16px",
+                        "14px",
+                        "12px",
+                        "10px",
+                        "8px",
                       ],
                       transition: {
-                        duration: 1.5, 
-                        ease: "linear",
-                        times: Array.from({ length: 26 }, (_, i) => i / 25),
+                        duration: 2.5,
+                        ease: [0.22, 1, 0.36, 1],
+                        borderRadius: {
+                          duration: 2.5,
+                          ease: "easeInOut",
+                        },
                       },
                     })
                     .then(() => {
@@ -122,7 +124,7 @@ export default function Landing() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("click", handleScroll);
-    }
+    };
   }, [
     lidControls,
     messageControls,
@@ -139,7 +141,6 @@ export default function Landing() {
       exit={{ opacity: 0 }}
       transition={{ duration: 1.2, ease: "easeInOut" }}
     >
-      {}
       <motion.div
         className="background-image"
         initial={{ opacity: 0 }}

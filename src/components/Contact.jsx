@@ -32,9 +32,7 @@ export default function Contact() {
     <div className="other-pages contact-page">
       <header className="home-header">
         <div className="left-nav">
-          <button className="nav-btn" onClick={() => navigate("/home")}>
-            Home
-          </button>
+          <div className="logo-placeholder" onClick={() => navigate("/home")}></div>
         </div>
 
         <button className="menu-toggle" id="menuToggle">
@@ -120,9 +118,7 @@ export default function Contact() {
 
             <div className="middle-section">
               <div className="left-half">
-                <div className="box box3">
-                  <img src={mapImg} alt="Map" />
-                </div>
+                <div className="box box3"></div>
 
                 <div className="bottom-row">
                     <a href="mailto:example@gmail.com" class="box box5-left box-link">
@@ -135,12 +131,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="box box4and6">
-                <h2>Address</h2>
-                <p>123 Example Street,</p>
-                <p>Toronto, ON, M1A 2B3,</p>
-                <p>Canada</p>
-              </div>
+              <div className="box box4and6"></div>
             </div>
           </div>
         </div>
