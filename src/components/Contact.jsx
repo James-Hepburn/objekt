@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import "./BlackPage.css";
 import "./CommonStyles.css";
 
-import mapImg from "/map.png";
 import emailIcon from "/email.png";
 import phoneIcon from "/phone.png";
 
