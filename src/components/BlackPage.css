@@ -1,5 +1,15 @@
 html, body {
-  background-color: #000;
+  background: #000;
+  position: relative;
+  z-index: 1;
+}
+
+main,
+header,
+footer,
+.home-page {
+  position: relative;
+  z-index: 1;
 }
 
 .other-pages::before {
@@ -7,22 +17,11 @@ html, body {
   position: fixed;
   inset: 0;
   background: #000;
-  z-index: -1;
   opacity: 0;
+  z-index: -1;
   animation: fadeInBlack 1.2s ease-in forwards;
 }
 
 @keyframes fadeInBlack {
-  to {
-    opacity: 1;
-  }
-}
-
-.home-page,
-body,
-main,
-header,
-footer {
-  position: relative;
-  z-index: 1;
+  to { opacity: 1; }
 }

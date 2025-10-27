@@ -20,7 +20,7 @@ export default function About() {
   }, []);
 
   return (
-    <div className="other-pages">
+    <div className="other-pages about-page">
       <header className="home-header">
         <div className="left-nav">
           <button className="nav-btn" onClick={() => navigate("/home")}>

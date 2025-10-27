@@ -29,7 +29,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="other-pages">
+    <div className="other-pages contact-page">
       <header className="home-header">
         <div className="left-nav">
           <button className="nav-btn" onClick={() => navigate("/home")}>

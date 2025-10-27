@@ -2,27 +2,19 @@
   position: relative;
   min-height: 100vh;
   overflow-x: hidden;
-  background-color: white;
-  background-image: url('/zebra_print_background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background: white url('/zebra_print_background.jpg') center / cover no-repeat fixed;
   will-change: background-image;
+  z-index: 1;
 }
 
 .home-page::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: url('/zebra_print_background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url('/zebra_print_background.jpg') center / cover no-repeat;
   z-index: -1;
 }
 
-.home-page,
 main,
 header,
 footer {
@@ -38,13 +30,13 @@ footer {
 .mailing-list-full {
   position: absolute;
   inset: 0;
-  background: white;
-  color: black;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
   padding: 2rem;
+  background: white;
+  color: black;
   border-radius: inherit;
 }
 
@@ -54,13 +46,8 @@ footer {
   text-align: center;
 }
 
-.mailing-list-full h2 {
-  margin-bottom: 0.5rem;
-}
-
-.mailing-list-full p {
-  margin-bottom: 1.25rem;
-}
+.mailing-list-full h2 { margin-bottom: 0.5rem; }
+.mailing-list-full p { margin-bottom: 1.25rem; }
 
 .mailing-list-full form {
   display: flex;
@@ -69,18 +56,18 @@ footer {
 }
 
 .mailing-list-full input {
+  width: 100%;
   padding: 0.6rem;
   border: 1px solid #ccc;
   border-radius: 0.5rem;
-  width: 100%;
 }
 
 .mailing-list-full button[type="submit"] {
+  padding: 0.6rem;
+  border: none;
+  border-radius: 0.5rem;
   background: black;
   color: white;
-  border: none;
-  padding: 0.6rem;
-  border-radius: 0.5rem;
   cursor: pointer;
   transition: background 0.2s ease;
 }
@@ -93,22 +80,22 @@ footer {
   position: absolute;
   top: 12px;
   right: 14px;
-  z-index: 10; 
-  border: none;
-  font-size: 1.5rem;
-  font-weight: bold;
-  line-height: 1;
-  cursor: pointer;
-  background-color: black; 
-  color: white;
-  width: 32px;
-  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 32px;
+  height: 32px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1;
+  color: white;
+  background: black;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
   transition: all 0.2s ease;
 }
 
 .close-btn:hover {
-  background-color: #333;
+  background: #333;
 }

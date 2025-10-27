@@ -91,21 +91,13 @@ export default function Landing() {
                 .then(() => {
                   baseControls
                     .start({
-                      backgroundColor: [
-                        "#000000", "#0a0a0a", "#141414", "#1f1f1f", "#292929",
-                        "#333333", "#3d3d3d", "#474747", "#515151", "#5b5b5b",
-                        "#656565", "#6f6f6f", "#797979", "#838383", "#8d8d8d",
-                        "#979797", "#a1a1a1", "#ababab", "#b5b5b5", "#bfbfbf",
-                        "#c9c9c9", "#d3d3d3", "#dddddd", "#e7e7e7", "#f1f1f1",
-                        "#ffffff",
-                      ],
                       border: "2px solid #000000",
                       borderRadius: [
                         "20px", "18px", "16px", "14px", "12px",
                         "10px", "8px", "6px", "4px", "2px", "0px",
                       ],
                       transition: {
-                        duration: 4, 
+                        duration: 1.5, 
                         ease: "linear",
                         times: Array.from({ length: 26 }, (_, i) => i / 25),
                       },
