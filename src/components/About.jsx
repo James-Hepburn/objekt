@@ -37,7 +37,7 @@ export default function About() {
         </div>
       </header>
 
-      <main style={{ height: "100vh" }}>
+      <main>
         <div className="content-container">
           <div className="box box1">
             <div className="box-inner">

@@ -57,7 +57,7 @@ export default function Contact() {
         </div>
       </header>
 
-      <main style={{ height: "100vh" }}>
+      <main>
         <div className="content-container">
           {}
           <div className="box box1">

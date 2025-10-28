@@ -45,11 +45,14 @@ export default function Home() {
         </div>
 
         <button
-          className="menu-toggle"
+          className={`menu-toggle ${menuOpen ? "open" : ""}`}
           id="menuToggle"
           onClick={() => setMenuOpen((prev) => !prev)}
+          aria-label="Toggle menu"
         >
-          {menuOpen ? "✕" : "☰"}
+          <div className="bar top"></div>
+          <div className="bar middle"></div>
+          <div className="bar bottom"></div>
         </button>
 
         <div className={`right-nav ${menuOpen ? "open" : ""}`} id="rightNav">
