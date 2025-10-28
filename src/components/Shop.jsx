@@ -7,6 +7,35 @@ import "./CommonStyles.css";
 export default function Work() {
   const navigate = useNavigate();
   const [quantity, setQuantity] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false)
+
+  const products = [
+    {
+      image: "/WEBSITE TSHIRTS-01.png",
+      description: "This is the description for Product 1",
+      price: "$10.00",
+      info: "Name of Product 1",
+    },
+    {
+      image: "/WEBSITE TSHIRTS-02.png",
+      description: "This is the description for Product 2",
+      price: "$20.00",
+      info: "Name of Product 2",
+    },
+    {
+      image: "/WEBSITE TSHIRTS-03.png",
+      description: "This is the description for Product 3",
+      price: "$30.00",
+      info: "Name of Product 3",
+    },
+    {
+      image: "/WEBSITE TSHIRTS-04.png",
+      description: "This is the description for Product 4",
+      price: "$40.00",
+      info: "Name of Product 4",
+    },
+  ];
 
   useEffect(() => {
     const menuToggle = document.getElementById("menuToggle");
@@ -32,8 +61,21 @@ export default function Work() {
   };
 
   const handleAdd = () => {
-    alert(`Added ${quantity} item(s).`);
+    alert(`Added ${quantity} of ${products[currentIndex].info}`);
+    setQuantity(0);
   };
+
+   const handleNext = () => {
+    setCurrentIndex((i) => (i + 1) % products.length);
+    setQuantity(0);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((i) => (i - 1 + products.length) % products.length);
+    setQuantity(0);
+  };
+
+  const product = products[currentIndex];
 
   return (
     <div className="other-pages shop-page">
@@ -70,19 +112,28 @@ export default function Work() {
       <main style={{ height: "100vh" }}>
         <div className="content-container">
           {}
-          <div className="box box1"></div>
+          <div className="box box1">
+            <button className="arrow left" onClick={handlePrev}>◀</button>
+
+            <div
+              className="product-image-container"
+              onClick={() => setIsLightboxOpen(true)}
+              style={{ cursor: "zoom-in" }}
+            >
+              <img
+                src={product.image}
+                alt={`Product ${currentIndex + 1}`}
+                className="product-image"
+              />
+            </div>
+
+            <button className="arrow right" onClick={handleNext}>▶</button>
+          </div>
 
           {}
           <div className="right-column">
             <div className="box box2">
-              <p>
-                Florus ventorum vagus per verba inanissima fluit, dum sonus
-                levitatis circumvolvitur in aere vacuo. Nihil de nihilo
-                loquitur, et tamen verba manent, quasi sensum aliquem
-                simulantia. Umbrae sententiarum sine mente ludunt, saltantes
-                inter syllabas otiosas. Ita textus procedit, nec finem nec
-                initium quaerens, sed in perpetuum de rebus nullis garriens.
-              </p>
+              <p>{product.description}</p>
             </div>
 
             <div className="merged-top"></div>
@@ -106,18 +157,26 @@ export default function Work() {
               </div>
 
               <div className="box box4and6">
-                <h2>$$$</h2>
-                <p>
-                  Florus ventorum vagus per verba inanissima fluit, dum sonus
-                  levitatis circumvolvitur in aere vacuo. Nihil de nihilo
-                  loquitur, et tamen verba manent, quasi sensum aliquem
-                  simulantia.
-                </p>
+                <h2>{product.price}</h2>
+                <p>{product.info}</p>
                 <button onClick={handleAdd}>Add</button>
               </div>
             </div>
           </div>
         </div>
+
+        {isLightboxOpen && (
+          <div
+            className="lightbox-overlay"
+            onClick={() => setIsLightboxOpen(false)}
+          >
+            <img
+              src={product.image}
+              alt={`Product ${currentIndex + 1}`}
+              className="lightbox-image"
+            />
+          </div>
+        )}
       </main>
 
       {}
