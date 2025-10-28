@@ -615,7 +615,7 @@ button[type="submit"] {
 .contact-page form {
   transform: scale(0.88);
   transform-origin: top center;
-  margin-top: 10px;
+  margin-top: 100px;
   margin-bottom: 20px;
 }
 
@@ -775,7 +775,11 @@ button[type="submit"] {
 }
 
 .shop-page .bottom-row .box5-left,
-.shop-page .bottom-row .box5-right {
+.shop-page .bottom-row .box5-right,
+.about-page .bottom-row .box5-left,
+.about-page .bottom-row .box5-right,
+.contact-page .bottom-row .box5-left,
+.contact-page .bottom-row .box5-right {
   background: linear-gradient(135deg, #e2c35d, #caa432, #f0d879) !important;
   background-size: 200% 200%;
   color: #fffdf2 !important;
@@ -806,7 +810,11 @@ button[type="submit"] {
 }
 
 .shop-page .bottom-row .box5-left:hover,
-.shop-page .bottom-row .box5-right:hover {
+.shop-page .bottom-row .box5-right:hover,
+.about-page .bottom-row .box5-left:hover,
+.about-page .bottom-row .box5-right:hover,
+.contact-page .bottom-row .box5-left:hover,
+.contact-page .bottom-row .box5-right:hover {
   background: linear-gradient(135deg, #f8e27f, #d8b84a, #b98a1d) !important;
   background-size: 300% 300%;
   color: #fff !important;
@@ -817,7 +825,11 @@ button[type="submit"] {
 }
 
 .shop-page .bottom-row .box5-left:active,
-.shop-page .bottom-row .box5-right:active {
+.shop-page .bottom-row .box5-right:active,
+.about-page .bottom-row .box5-left:active,
+.about-page .bottom-row .box5-right:active,
+.contact-page .bottom-row .box5-left:active,
+.contact-page .bottom-row .box5-right:active  {
   transform: scale(0.96);
   box-shadow: 0 3px 6px rgba(212, 175, 55, 0.3);
 }
