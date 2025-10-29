@@ -113,3 +113,14 @@ footer {
 .close-btn:hover {
   background: #333;
 }
+
+.zebra-header {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(14px) brightness(0.9);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.zebra-header.scrolled {
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}

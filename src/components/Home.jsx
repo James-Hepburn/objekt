@@ -19,6 +19,19 @@ export default function Home() {
       setShowMailingList(true);
       hasShownMailingList = true;
     }
+
+    const handleScroll = () => {
+      const header = document.querySelector('.home-header');
+
+      if (window.scrollY > 40) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [location]);
 
   const handleCloseMailingList = () => {
@@ -39,7 +52,7 @@ export default function Home() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.8, ease: "easeInOut" }}
     >
-      <header className="home-header">
+      <header className="home-header zebra-header">
         <div className="left-nav">
           <div className="logo-placeholder" onClick={() => navigate("/home")}>
             <img src="Logo-Wide.png" alt="Logo" className="logo-image" />

@@ -24,7 +24,9 @@ export default function Home() {
     <div className="other-pages">
       <header className="home-header">
         <div className="left-nav">
-          <div className="logo-placeholder" onClick={() => navigate("/home")}></div>
+          <div className="logo-placeholder" onClick={() => navigate("/home")}>
+            <img src="Logo-Wide.png" alt="Logo" className="logo-image" />
+          </div>
         </div>
 
         <button className="menu-toggle" id="menuToggle">

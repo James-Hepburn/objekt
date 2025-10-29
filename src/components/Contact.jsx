@@ -31,7 +31,9 @@ export default function Contact() {
     <div className="other-pages contact-page">
       <header className="home-header">
         <div className="left-nav">
-          <div className="logo-placeholder" onClick={() => navigate("/home")}></div>
+          <div className="logo-placeholder" onClick={() => navigate("/home")}>
+            <img src="Logo-Wide.png" alt="Logo" className="logo-image" />
+          </div>
         </div>
 
         <button className="menu-toggle" id="menuToggle">
