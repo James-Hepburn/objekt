@@ -109,7 +109,7 @@ export default function Contact() {
           <div className="right-column">
             <div className="box box2">
               <h2>Socials</h2>
-              <p>Email: example@gmail.com</p>
+              <p>Email: info@chausobjekt.com</p>
               <p>Instagram: exampleUsername</p>
               <p>Facebook: examplePage</p>
             </div>
@@ -122,7 +122,7 @@ export default function Contact() {
                 <div className="box box3"></div>
 
                 <div className="bottom-row">
-                    <a href="mailto:example@gmail.com" class="box box5-left box-link">
+                    <a href="mailto:info@chausobjekt.com" class="box box5-left box-link">
                     <img src={emailIcon} alt="Email" />
                     </a>
 
@@ -147,7 +147,7 @@ export default function Contact() {
           </button>
         </div>
 
-        <p>Email: example@gmail.com</p>
+        <p>info@chausobjekt.com</p>
 
         <div className="social-icons">
           <a href="https://instagram.com" target="_blank" rel="noreferrer">

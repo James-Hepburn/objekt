@@ -193,7 +193,7 @@ export default function Work() {
           </button>
         </p>
 
-        <p>Email: example@gmail.com</p>
+        <p>info@chausobjekt.com</p>
 
         <div className="social-icons">
           <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">

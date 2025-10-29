@@ -38,9 +38,27 @@ export default function Home() {
     setShowMailingList(false);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Email submitted:", email);
+
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      if (res.ok) {
+        alert("Thanks for subscribing! You’re now on the list.");
+        setEmail("");
+      } else {
+        alert("Subscription failed. Please try again later.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Network error. Please try again later.");
+    }
+
     setShowMailingList(false);
   };
 
@@ -144,7 +162,7 @@ export default function Home() {
             Contact us
           </button>
         </p>
-        <p>Email: example@gmail.com</p>
+        <p>info@chausobjekt.com</p>
 
         <div className="social-icons">
           <a href="https://instagram.com" target="_blank" rel="noreferrer">
