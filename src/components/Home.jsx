@@ -99,7 +99,9 @@ export default function Home() {
 
       <main>
         <div className="content-container">
-          <div className="box box1"></div>
+          <div className="box box1">
+            <img src="/Logo-Tall.png" alt="Logo" className="box1-image" />
+          </div>
 
           <div className="right-column">
             <div className="box box2">
