@@ -188,7 +188,9 @@ export default function Landing() {
             zIndex: 300,
           }}
         >
-          <h1 className="company-name">C. HAUS Objekt</h1>
+          <h1 className="company-name">
+            C. HAUS <span className="mobile-break">Objekt</span>
+          </h1>
         </motion.div>
 
         <motion.div
