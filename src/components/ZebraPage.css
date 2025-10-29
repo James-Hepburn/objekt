@@ -108,6 +108,8 @@ footer {
   cursor: pointer;
   z-index: 10;
   transition: all 0.2s ease;
+  margin-right: 1rem;
+  margin-top: 1rem;
 }
 
 .close-btn:hover {
