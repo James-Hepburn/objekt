@@ -146,7 +146,9 @@ export default function CartPage() {
               <div className="left-half">
                 <div className="box box3">
                   <p>
-                    If you have any questions or need help with your order, please contact us at
+                    If you have any questions or need 
+                    <br />
+                    help with your order, please contact us at
                     <br />
                     <strong>info@chausobjekt.com</strong>
                   </p>
