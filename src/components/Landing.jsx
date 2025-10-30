@@ -35,7 +35,7 @@ export default function Landing() {
           transition: { duration: 1.2, ease: "easeInOut" },
         });
 
-        const isMobile = window.innerWidth <= 768;
+        const isMobile = window.innerWidth <= 900;
 
         nameTrackControls.start({
           opacity: 1,

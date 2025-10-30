@@ -154,6 +154,8 @@
   .gift-base {
     width: 65vw;
     height: 35vw;
+    position: absolute;
+    bottom: -1px;
   }
 
   .company-name {
