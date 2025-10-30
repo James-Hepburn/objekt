@@ -1093,6 +1093,27 @@ button[type="submit"] {
     grid-column: 1 / 2;
   }
 
+  .home-page .box1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background: white !important;
+  }
+
+  .home-page .box1 img,
+  .home-page .box1-image {
+    width: auto;
+    height: 50%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: none;
+    background-color: white;
+    position: relative;
+    padding: 1.5rem;
+  }
+
   .right-column {
     display: grid;
     grid-template-rows: 1fr 1fr;
@@ -1103,7 +1124,6 @@ button[type="submit"] {
     position: relative;
   }
 
-  /* Ensure hidden sections truly don't affect layout */
   .box2,
   .middle-section,
   .left-half,
@@ -1163,5 +1183,10 @@ button[type="submit"] {
   .bottom-row button {
     width: 50px;
     height: 50px;
+  }
+
+  .social-icons a {
+    width: 40px;
+    height: 40px;
   }
 }
