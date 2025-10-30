@@ -51,7 +51,7 @@ body {
 
 .right-nav {
   position: fixed;
-  top: 60px;
+  top: 110px;
   right: 0;
   display: flex;
   flex-direction: column;
@@ -1021,7 +1021,7 @@ button[type="submit"] {
 
   .right-nav {
     width: 150px;
-    top: 50px;
+    top: 100px;
     padding: 0.5rem;
     border-radius: 0 0 0 6px;
   }
