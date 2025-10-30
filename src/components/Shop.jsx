@@ -10,7 +10,7 @@ import "./CommonStyles.css";
 export default function Work() {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1000);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false)
 

@@ -100,7 +100,7 @@ export default function Home() {
       <main>
         <div className="content-container">
           <div className="box box1">
-            <img src="/Logo-Tall.png" alt="Logo" className="box1-image" />
+            <img src="/Logo-Tall-Transparent.png" alt="Logo" className="box1-image" />
           </div>
 
           <div className="right-column">
@@ -140,7 +140,39 @@ export default function Home() {
               )}
             </div>
 
-            <div className="merged-top"></div>
+            <div className="merged-top">
+              {showMailingList && (
+                <motion.div
+                  className="mailing-list-mobile"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <button
+                    className="close-btn"
+                    onClick={handleCloseMailingList}
+                    aria-label="Close mailing list"
+                  >
+                    ✕
+                  </button>
+
+                  <div className="mailing-list-content">
+                    <h2>Join Our Mailing List</h2>
+                    <form onSubmit={handleSubmit}>
+                      <input
+                        type="email"
+                        placeholder="Enter your email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                      />
+                      <button type="submit">Sign Up</button>
+                    </form>
+                  </div>
+                </motion.div>
+              )}
+            </div>
             <div className="merged-bottom"></div>
 
             <div className="middle-section">
