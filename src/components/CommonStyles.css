@@ -929,6 +929,72 @@ button[type="submit"] {
   box-shadow: 0 3px 6px rgba(212, 175, 55, 0.3);
 }
 
+.right-header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-right: 1rem; 
+}
+
+.cart-icon {
+  position: relative; 
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  top: 0;
+  background: linear-gradient(135deg, #e2c35d, #caa432, #f0d879);
+  background-size: 200% 200%;
+  color: #fffdf2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  animation: shimmer 6s ease-in-out infinite;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transform-origin: center; 
+}
+
+.cart-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+}
+
+.cart-count {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: #ff4d4d;
+  color: #fff;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  pointer-events: none;
+  transition: transform 0.25s ease;
+}
+
+.cart-icon:hover .cart-count {
+  transform: scale(1.1);
+}
+
+.fade-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 15, 15, 0.95);
+  opacity: 0;
+  z-index: 10001;
+  transition: opacity 0.5s ease;
+}
+.fade-overlay.active {
+  opacity: 1;
+}
+
 @media screen and (max-width: 900px) {
   form {
     padding: 1.5rem;

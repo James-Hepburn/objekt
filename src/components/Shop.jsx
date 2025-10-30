@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useCart } from "/src/CartContext";
+import Modal from "/src/Modal";
+import CartIcon from "/src/CartIcon";
 
 import "./BlackPage.css";
 import "./CommonStyles.css";
 
 export default function Work() {
   const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
   const [quantity, setQuantity] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false)
@@ -37,6 +41,9 @@ export default function Work() {
     },
   ];
 
+  const { addToCart } = useCart();
+  const [showModal, setShowModal] = useState(false);
+
   useEffect(() => {
     const menuToggle = document.getElementById("menuToggle");
     const rightNav = document.getElementById("rightNav");
@@ -61,8 +68,18 @@ export default function Work() {
   };
 
   const handleAdd = () => {
-    alert(`Added ${quantity} of ${products[currentIndex].info}`);
+    if (quantity <= 0) return;
+
+    addToCart({
+      id: currentIndex, 
+      name: product.info,
+      price: product.price,
+      image: product.image,
+      quantity,
+    });
+
     setQuantity(0);
+    setShowModal(true);
   };
 
    const handleNext = () => {
@@ -87,11 +104,22 @@ export default function Work() {
           </div>
         </div>
 
-        <button className="menu-toggle" id="menuToggle">
-          ☰
-        </button>
+        <div className="right-header-controls">
+          <CartIcon />
 
-        <div className="right-nav" id="rightNav">
+          <button
+            className={`menu-toggle ${menuOpen ? "open" : ""}`}
+            id="menuToggle"
+            onClick={() => setMenuOpen((prev) => !prev)}
+            aria-label="Toggle menu"
+          >
+            <div className="bar top"></div>
+            <div className="bar middle"></div>
+            <div className="bar bottom"></div>
+          </button>
+        </div>
+
+        <div className={`right-nav ${menuOpen ? "open" : ""}`} id="rightNav">
           <button className="nav-btn" onClick={() => navigate("/services")}>
             Services
           </button>
@@ -180,6 +208,19 @@ export default function Work() {
           </div>
         )}
       </main>
+
+      {showModal && (
+        <Modal
+          title="Item Added to Cart!"
+          message={`${product.info} has been added to your cart.`}
+          onClose={() => setShowModal(false)}
+          onContinue={() => setShowModal(false)}
+          onGoToCart={() => {
+            setShowModal(false);
+            navigate("/cart");
+          }}
+        />
+      )}
 
       {}
       <footer className="site-footer">

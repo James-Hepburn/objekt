@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; 
 
 import "./BlackPage.css";
@@ -6,6 +6,7 @@ import "./CommonStyles.css";
 
 export default function Services() {
   const navigate = useNavigate(); 
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const menuToggle = document.getElementById("menuToggle");
@@ -29,11 +30,18 @@ export default function Services() {
           </div>
         </div>
 
-        <button className="menu-toggle" id="menuToggle">
-          ☰
+        <button
+          className={`menu-toggle ${menuOpen ? "open" : ""}`}
+          id="menuToggle"
+          onClick={() => setMenuOpen((prev) => !prev)}
+          aria-label="Toggle menu"
+        >
+          <div className="bar top"></div>
+          <div className="bar middle"></div>
+          <div className="bar bottom"></div>
         </button>
 
-        <div className="right-nav" id="rightNav">
+        <div className={`right-nav ${menuOpen ? "open" : ""}`} id="rightNav">
           <button className="nav-btn" onClick={() => navigate("/services")}>
             Services
           </button>

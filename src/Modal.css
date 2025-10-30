@@ -1,0 +1,68 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.modal-content {
+  background: #fffdf2;
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  animation: fadeInUp 0.35s ease-out;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  color: #222;
+  font-size: 1.6rem;
+}
+
+.modal-content p {
+  color: #444;
+  margin: 1rem 0 2rem 0;
+  line-height: 1.4;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.modal-buttons button {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+  color: #fff;
+}
+
+.continue-btn {
+  background: linear-gradient(135deg, #6b859c, #4e6478);
+}
+.cart-btn {
+  background: linear-gradient(135deg, #e2c35d, #caa432, #f0d879);
+}
+
+.modal-buttons button:hover {
+  transform: scale(1.05);
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);   opacity: 1; }
+}

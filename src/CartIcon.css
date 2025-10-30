@@ -1,0 +1,59 @@
+.cart-icon-container {
+  position: fixed;
+  top: 20px;
+  right: 90px; 
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-icon {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e2c35d, #caa432, #f0d879);
+  background-size: 200% 200%;
+  color: #fffdf2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  z-index: 2000;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: shimmer 6s ease-in-out infinite;
+}
+
+.cart-icon:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
+  color: #fff;
+}
+
+.cart-count {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: #ff4d4d;
+  color: #fff;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
