@@ -10,9 +10,9 @@ body {
 }
 
 :root {
-  --pantone-7527: #cdc6b9;  
-  --pantone-5425: #6b859c; 
-  --pantone-571:  #a7d3cf; 
+  --pantone-7527: #cdc6b9;
+  --pantone-5425: #6b859c;
+  --pantone-571: #a7d3cf;
 }
 
 *,
@@ -21,6 +21,56 @@ body {
   box-sizing: inherit;
 }
 
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shimmer-hover {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes metallicShine {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes lightSweep {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}
+
+@keyframes metallicPulse {
+  0% {
+    background: linear-gradient(135deg, #6b859c, #a4bac6, #6b859c);
+    background-size: 300% 300%;
+  }
+  50% {
+    background: linear-gradient(135deg, #a4bac6, #dbe4ea, #6b859c);
+    background-size: 400% 400%;
+  }
+  100% {
+    background: linear-gradient(135deg, #6b859c, #91a8b7, #4e6478);
+    background-size: 300% 300%;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* HEADER / NAV */
 .home-header {
   position: fixed;
   top: 0;
@@ -72,55 +122,107 @@ body {
   box-shadow: -10px 0 25px rgba(0, 0, 0, 0.5);
 }
 
+/* GOLD GRADIENT SHARED BUTTON STYLE (BASE) */
 .nav-btn,
 .contact-btn,
 .right-nav .nav-btn,
 .social-icons a,
 .box button,
 .shop-page .box4and6 button,
-.contact-page form button[type="submit"] {
+.contact-page form button[type="submit"],
+.shop-page .bottom-row .box5-left,
+.shop-page .bottom-row .box5-right,
+.about-page .bottom-row .box5-left,
+.about-page .bottom-row .box5-right,
+.contact-page .bottom-row .box5-left,
+.contact-page .bottom-row .box5-right,
+.cart-page .bottom-row .box5-left,
+.cart-page .bottom-row .box5-right,
+.menu-toggle,
+.cart-icon {
   background: linear-gradient(135deg, #e2c35d, #caa432, #f0d879);
   background-size: 200% 200%;
   color: #fffdf2;
   border: none;
-  border-radius: 30px;
   font-weight: 600;
-  cursor: pointer;
   letter-spacing: 0.5px;
+  cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25),
-              0 0 8px rgba(212, 175, 55, 0.3);
   animation: shimmer 6s ease-in-out infinite;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.25),
+    0 0 8px rgba(212, 175, 55, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.about-page .box5-left.box-link,
-.about-page .box5-right.box-link,
-.contact-page .box5-left.box-link,
-.contact-page .box5-right.box-link,
-.shop-page .box5-left.box-link,
-.shop-page .box5-right.box-link {
-  border-radius: 12px;
-  font-size: 2rem;
-  font-weight: 700;
-  width: 100%;
-  height: 100%;
+/* EXTENDED GOLD ROUNDED STYLE */
+.nav-btn,
+.contact-btn,
+.right-nav .nav-btn,
+.social-icons a,
+.box button,
+.shop-page .box4and6 button,
+.contact-page form button[type="submit"],
+.shop-page .bottom-row .box5-left,
+.shop-page .bottom-row .box5-right,
+.about-page .bottom-row .box5-left,
+.about-page .bottom-row .box5-right,
+.contact-page .bottom-row .box5-left,
+.contact-page .bottom-row .box5-right,
+.cart-page .bottom-row .box5-left,
+.cart-page .bottom-row .box5-right,
+.cart-icon {
+  border-radius: 30px;
+  font-weight: 600;
 }
 
-@keyframes shimmer {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+/* HOVER STYLE FOR GOLD BUTTONS */
+.nav-btn:hover,
+.contact-btn:hover,
+.right-nav .nav-btn:hover,
+.social-icons a:hover,
+.box button:hover,
+.shop-page .box4and6 button:hover,
+.contact-page form button[type="submit"]:hover,
+.shop-page .bottom-row .box5-left:hover,
+.shop-page .bottom-row .box5-right:hover,
+.about-page .bottom-row .box5-left:hover,
+.about-page .bottom-row .box5-right:hover,
+.contact-page .bottom-row .box5-left:hover,
+.contact-page .bottom-row .box5-right:hover,
+.cart-page .bottom-row .box5-left:hover,
+.cart-page .bottom-row .box5-right:hover {
+  background: linear-gradient(135deg, #f8e27f, #d8b84a, #b98a1d);
+  background-size: 300% 300%;
+  color: #fff;
+  transform: translateY(-2px) scale(1.07);
+  box-shadow:
+    0 10px 22px rgba(212, 175, 55, 0.5),
+    0 0 12px rgba(255, 220, 120, 0.6);
+  animation: shimmer-hover 3s ease-in-out infinite;
 }
 
+/* ACTIVE STATE FOR GOLD BUTTONS */
+.nav-btn:active,
+.contact-btn:active,
+.box button:active,
+.shop-page .box4and6 button:active,
+.contact-page form button[type="submit"]:active,
+.shop-page .bottom-row .box5-left:active,
+.shop-page .bottom-row .box5-right:active,
+.about-page .bottom-row .box5-left:active,
+.about-page .bottom-row .box5-right:active,
+.contact-page .bottom-row .box5-left:active,
+.contact-page .bottom-row .box5-right:active,
+.cart-page .bottom-row .box5-left:active,
+.cart-page .bottom-row .box5-right:active {
+  transform: scale(0.96);
+  box-shadow: 0 3px 6px rgba(212, 175, 55, 0.3);
+}
+
+/* BUTTON-SPECIFIC SIZING */
 .nav-btn,
 .right-nav .nav-btn {
   padding: 0.6rem 1.4rem;
@@ -132,7 +234,6 @@ body {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-  letter-spacing: 0.5px;
   display: block;
   margin-top: 0.5rem;
 }
@@ -141,9 +242,6 @@ body {
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 1.3rem;
 }
 
@@ -157,61 +255,29 @@ body {
   letter-spacing: 0.3px;
 }
 
-.nav-btn:hover,
-.contact-btn:hover,
-.right-nav .nav-btn:hover,
-.social-icons a:hover,
-.box button:hover,
-.shop-page .box4and6 button:hover,
-.contact-page form button[type="submit"]:hover {
-  background: linear-gradient(135deg, #f8e27f, #d8b84a, #b98a1d);
-  background-size: 300% 300%;
-  color: #fff;
-  transform: translateY(-2px) scale(1.07);
-  box-shadow: 0 10px 22px rgba(212, 175, 55, 0.5),
-              0 0 12px rgba(255, 220, 120, 0.6);
-  animation: shimmer-hover 3s ease-in-out infinite;
+/* SPECIAL LARGE GOLD BOX LINKS (PAGE SECTIONS) */
+.about-page .box5-left.box-link,
+.about-page .box5-right.box-link,
+.contact-page .box5-left.box-link,
+.contact-page .box5-right.box-link,
+.shop-page .box5-left.box-link,
+.shop-page .box5-right.box-link {
+  border-radius: 12px;
+  font-size: 2rem;
+  font-weight: 700;
+  width: 100%;
+  height: 100%;
 }
 
-@keyframes shimmer-hover {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.nav-btn:active,
-.contact-btn:active,
-.box button:active,
-.shop-page .box4and6 button:active,
-.contact-page form button[type="submit"]:active {
-  transform: scale(0.96);
-  box-shadow: 0 3px 6px rgba(212, 175, 55, 0.3);
-}
-
+/* MENU TOGGLE (inherits gold gradient above) */
 .menu-toggle {
-  display: flex;
-  flex-direction: column; 
-  justify-content: center;
-  align-items: center;
-  gap: 6px; 
+  flex-direction: column;
+  gap: 6px;
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #e2c35d, #caa432, #f0d879);
-  background-size: 200% 200%;
-  animation: shimmer 6s ease-in-out infinite; 
   border: none;
-  cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow:
-    0 4px 12px rgba(0, 0, 0, 0.25),
-    0 0 8px rgba(212, 175, 55, 0.3);
   z-index: 15;
 }
 
@@ -227,8 +293,7 @@ body {
 
 .menu-toggle:active {
   transform: scale(0.95);
-  box-shadow:
-    0 3px 6px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 3px 6px rgba(212, 175, 55, 0.3);
 }
 
 .menu-toggle .bar {
@@ -250,6 +315,7 @@ body {
   transform: translateY(-9px) rotate(-45deg);
 }
 
+/* LAYOUT */
 .home-page main,
 .other-pages main,
 .cart-page main {
@@ -266,29 +332,31 @@ body {
   width: 95%;
   max-width: 1350px;
   height: 700px;
-  margin: 0 auto;
+  margin: 500px auto 0;
   padding: 20px;
-  background-color: var(--pantone-5425); 
+  background-color: var(--pantone-5425);
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
   overflow: hidden;
   transition: all 0.3s ease;
-  margin-top: 500px;
 }
 
 .content-container:hover {
-  box-shadow: 0 0 18px rgba(212, 175, 55, 0.6), 0 8px 20px rgba(0, 0, 0, 0.25); 
+  box-shadow:
+    0 0 18px rgba(212, 175, 55, 0.6),
+    0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
+/* BOX GRID STRUCTURE */
 .box1 {
   flex: 1;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
-  align-items: center;       
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  position: relative; 
+  position: relative;
   overflow: hidden;
 }
 
@@ -298,9 +366,9 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;   
-  border-radius: 0;    
-  box-shadow: none;   
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
   filter: brightness(0.97) contrast(1.08);
   background-color: transparent;
 }
@@ -316,7 +384,7 @@ body {
   flex: 2;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
   align-items: stretch;
   height: 100%;
   gap: 7px;
@@ -326,10 +394,10 @@ body {
   flex: 1;
   height: 40%;
   display: flex;
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center; 
-  text-align: center; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   padding: 20px;
 }
 
@@ -352,10 +420,20 @@ body {
   height: 50%;
   overflow: hidden;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center; 
+  text-align: center;
+}
+
+.box3 img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
 }
 
 .bottom-row {
@@ -373,6 +451,7 @@ body {
   margin-left: 20px;
 }
 
+/* GENERIC CONTENT BOX STYLE */
 .box {
   border: none;
   background: linear-gradient(135deg, var(--pantone-7527), var(--pantone-571));
@@ -380,9 +459,9 @@ body {
   color: #fff;
   border-radius: 14px;
   box-shadow:
-    0 10px 18px rgba(0, 0, 0, 0.35),  
-    -4px -4px 8px rgba(255, 255, 255, 0.05), 
-    inset 0 1px 2px rgba(255, 255, 255, 0.1); 
+    0 10px 18px rgba(0, 0, 0, 0.35),
+    -4px -4px 8px rgba(255, 255, 255, 0.05),
+    inset 0 1px 2px rgba(255, 255, 255, 0.1);
   transition: transform 0.25s ease, box-shadow 0.25s ease, background-position 1s ease;
   animation: gradientShift 10s ease-in-out infinite;
   display: flex;
@@ -399,15 +478,9 @@ body {
   transform: scale(1.04);
   background-position: 100% 0;
   box-shadow:
-    8px 12px 22px rgba(0, 0, 0, 0.45), 
-    -2px -2px 6px rgba(255, 255, 255, 0.07), 
-    0 0 16px rgba(212, 175, 55, 0.4);  
-}
-
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+    8px 12px 22px rgba(0, 0, 0, 0.45),
+    -2px -2px 6px rgba(255, 255, 255, 0.07),
+    0 0 16px rgba(212, 175, 55, 0.4);
 }
 
 .box h2 {
@@ -423,6 +496,7 @@ body {
   margin: 0 0 1rem;
 }
 
+/* BOX LINKS / CTA BLOCKS */
 .box.box-link {
   display: flex;
   align-items: center;
@@ -457,16 +531,7 @@ a.box.box-link {
   height: 50px;
 }
 
-.box3 img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
+/* ROUND BUTTONS IN bottom-row (ARROWS ETC.) */
 .bottom-row button {
   width: 60px;
   height: 60px;
@@ -484,6 +549,7 @@ a.box.box-link {
   height: 28px;
 }
 
+/* BOX5 LEFT/RIGHT */
 .box5-left,
 .box5-right {
   flex: 1;
@@ -497,6 +563,7 @@ a.box.box-link {
   transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+/* GOLD VARIANT FOR BOX5 IN PAGES */
 .about-page .bottom-row .box5-left,
 .about-page .bottom-row .box5-right,
 .contact-page .bottom-row .box5-left,
@@ -532,6 +599,7 @@ a.box.box-link {
   box-shadow: 0 2px 6px rgba(212, 175, 55, 0.3);
 }
 
+/* SHOP PAGE BUTTON TEXT INSIDE BOX5 */
 .shop-page .box5-left button,
 .shop-page .box5-right button {
   background: transparent;
@@ -542,6 +610,7 @@ a.box.box-link {
   cursor: pointer;
 }
 
+/* FOOTER */
 .site-footer {
   position: relative;
   left: 50%;
@@ -570,10 +639,11 @@ a.box.box-link {
   margin-top: 1.2rem;
 }
 
+/* FORM GENERAL */
 form {
-  width: 80%;              
-  max-width: 420px;         
-  transform: scale(0.9);    
+  width: 80%;
+  max-width: 420px;
+  transform: scale(0.9);
   transform-origin: center top;
   border: 2px solid rgba(212, 175, 55, 0.3);
   border-radius: 12px;
@@ -581,9 +651,7 @@ form {
   background-color: #fff;
   padding: 1.6rem;
   transition: transform 0.25s ease;
-  margin-bottom: 20px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 20px;
 }
 
 form:hover {
@@ -612,7 +680,7 @@ textarea {
 
 input:focus,
 textarea:focus {
-  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.4); 
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.4);
   border-color: #d4af37;
   outline: none;
 }
@@ -623,7 +691,8 @@ textarea {
 }
 
 button[type="submit"] {
-  margin-top: 1.5rem;  color: #fff;
+  margin-top: 1.5rem;
+  color: #fff;
   border: none;
   padding: 0.85rem;
   border-radius: 6px;
@@ -634,13 +703,14 @@ button[type="submit"] {
   transition: background-color 0.3s ease;
 }
 
+/* CONTACT PAGE FORM STYLES */
 .contact-page .box1 {
-  overflow-y: auto;     
+  overflow-y: auto;
   overflow-x: hidden;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 1rem 0;      
+  padding: 1rem 0;
 }
 
 .contact-page form {
@@ -692,18 +762,16 @@ button[type="submit"] {
   margin-bottom: 1.2rem;
 }
 
+/* CONTACT PAGE SUBMIT BUTTON (inherits gold base + tweaks) */
 .contact-page form button[type="submit"] {
   display: block;
   margin: 0.5rem auto 0 auto;
   background: linear-gradient(135deg, #d4af37, #c89b2c);
   color: #fffbe6;
-  border: none;
   border-radius: 8px;
-  font-weight: 600;
   font-size: 1.1rem;
   padding: 0.8rem 1.4rem;
   box-shadow: 0 6px 14px rgba(212, 175, 55, 0.4);
-  cursor: pointer;
   transition: all 0.3s ease;
 }
 
@@ -714,6 +782,7 @@ button[type="submit"] {
   box-shadow: 0 10px 20px rgba(212, 175, 55, 0.5);
 }
 
+/* LOGO BADGE */
 .logo-placeholder {
   width: 150px;
   height: 70px;
@@ -732,16 +801,19 @@ button[type="submit"] {
   );
   background-size: 300% 300%;
   animation: metallicShine 6s ease-in-out infinite;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3),
-              inset 0 0 12px rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 6px 14px rgba(0, 0, 0, 0.3),
+    inset 0 0 12px rgba(255, 255, 255, 0.15);
   transition: all 0.4s ease;
 }
 
 .logo-placeholder::before {
   content: "";
   position: absolute;
-  top: 0; left: -75%;
-  width: 50%; height: 100%;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
   background: linear-gradient(
     120deg,
     transparent 0%,
@@ -762,41 +834,17 @@ button[type="submit"] {
 }
 
 .logo-placeholder:hover {
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35),
-              0 0 18px rgba(212, 175, 55, 0.6),
-              inset 0 0 12px rgba(255, 255, 255, 0.25);
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.35),
+    0 0 18px rgba(212, 175, 55, 0.6),
+    inset 0 0 12px rgba(255, 255, 255, 0.25);
   animation: metallicPulse 1.5s ease-in-out;
 }
 
-@keyframes metallicShine {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes lightSweep {
-  0% { left: -75%; }
-  100% { left: 125%; }
-}
-
-@keyframes metallicPulse {
-  0% {
-    background: linear-gradient(135deg, #6b859c, #a4bac6, #6b859c);
-    background-size: 300% 300%;
-  }
-  50% {
-    background: linear-gradient(135deg, #a4bac6, #dbe4ea, #6b859c);
-    background-size: 400% 400%;
-  }
-  100% {
-    background: linear-gradient(135deg, #6b859c, #91a8b7, #4e6478);
-    background-size: 300% 300%;
-  }
-}
-
+/* PRODUCT IMAGE / LIGHTBOX */
 .box1 .arrow {
   position: absolute;
-  top:80%;
+  top: 80%;
   background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
@@ -812,12 +860,8 @@ button[type="submit"] {
   color: black;
 }
 
-.box1 .arrow.left {
-  left: 10px;
-}
-.box1 .arrow.right {
-  right: 10px;
-}
+.box1 .arrow.left { left: 10px; }
+.box1 .arrow.right { right: 10px; }
 
 .product-image-container {
   width: 100%;
@@ -825,7 +869,13 @@ button[type="submit"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: transparent
+  background-color: transparent;
+  cursor: zoom-in;
+  transition: transform 0.2s ease;
+}
+
+.product-image-container:hover {
+  transform: scale(1.02);
 }
 
 .product-image {
@@ -855,20 +905,7 @@ button[type="submit"] {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.product-image-container {
-  cursor: zoom-in;
-  transition: transform 0.2s ease;
-}
-
-.product-image-container:hover {
-  transform: scale(1.02);
-}
-
+/* BIG GOLD ACTION BUTTONS IN BOTTOM ROW (SHOP/ABOUT/CONTACT/CART OVERRIDE) */
 .shop-page .bottom-row .box5-left,
 .shop-page .bottom-row .box5-right,
 .about-page .bottom-row .box5-left,
@@ -881,13 +918,14 @@ button[type="submit"] {
   background-size: 200% 200%;
   color: #fffdf2 !important;
   border: none !important;
-  border-radius: 30px !important; 
+  border-radius: 30px !important;
   font-weight: 600;
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25),
-              0 0 8px rgba(212, 175, 55, 0.3);
-  animation: shimmer 6s ease-in-out infinite; 
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.25),
+    0 0 8px rgba(212, 175, 55, 0.3);
+  animation: shimmer 6s ease-in-out infinite;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -906,64 +944,28 @@ button[type="submit"] {
   user-select: none;
 }
 
-.shop-page .bottom-row .box5-left:hover,
-.shop-page .bottom-row .box5-right:hover,
-.about-page .bottom-row .box5-left:hover,
-.about-page .bottom-row .box5-right:hover,
-.contact-page .bottom-row .box5-left:hover,
-.contact-page .bottom-row .box5-right:hover,
-.cart-page .bottom-row .box5-left:hover,
-.cart-page .bottom-row .box5-right:hover {
-  background: linear-gradient(135deg, #f8e27f, #d8b84a, #b98a1d) !important;
-  background-size: 300% 300%;
-  color: #fff !important;
-  transform: translateY(-2px) scale(1.07);
-  box-shadow: 0 10px 22px rgba(212, 175, 55, 0.5),
-              0 0 12px rgba(255, 220, 120, 0.6);
-  animation: shimmer-hover 3s ease-in-out infinite;
+/* CART ICON IN HEADER (inherits gold base and border-radius) */
+.cart-icon {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  top: 0;
+  font-size: 1.25rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transform-origin: center;
 }
 
-.shop-page .bottom-row .box5-left:active,
-.shop-page .bottom-row .box5-right:active,
-.about-page .bottom-row .box5-left:active,
-.about-page .bottom-row .box5-right:active,
-.contact-page .bottom-row .box5-left:active,
-.contact-page .bottom-row .box5-right:active,
-.cart-page .bottom-row .box5-left:active,
-.cart-page .bottom-row .box5-right:active  {
-  transform: scale(0.96);
-  box-shadow: 0 3px 6px rgba(212, 175, 55, 0.3);
+.cart-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
 }
 
 .right-header-controls {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-right: 1rem; 
-}
-
-.cart-icon {
-  position: relative; 
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  top: 0;
-  background: linear-gradient(135deg, #e2c35d, #caa432, #f0d879);
-  background-size: 200% 200%;
-  color: #fffdf2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.25rem;
-  cursor: pointer;
-  animation: shimmer 6s ease-in-out infinite;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  transform-origin: center; 
-}
-
-.cart-icon:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+  margin-right: 1rem;
 }
 
 .cart-count {
@@ -972,10 +974,10 @@ button[type="submit"] {
   right: -6px;
   background: #ff4d4d;
   color: #fff;
-  border-radius: 9999px; 
+  border-radius: 9999px;
   height: 22px;
   min-width: 22px;
-  padding: 12px 12px; 
+  padding: 12px 12px;
   font-size: 0.65rem;
   display: inline-flex;
   justify-content: center;
@@ -992,6 +994,7 @@ button[type="submit"] {
   transform: scale(1.1);
 }
 
+/* OVERLAY */
 .fade-overlay {
   pointer-events: none;
   position: fixed;
@@ -1005,10 +1008,12 @@ button[type="submit"] {
   opacity: 1;
 }
 
+/* MOBILE MAILING LIST BLOCK HIDDEN BY DEFAULT */
 .mailing-list-mobile {
   display: none;
 }
 
+/* RESPONSIVE */
 @media screen and (max-width: 900px) {
   form {
     padding: 1.5rem;
@@ -1043,11 +1048,6 @@ button[type="submit"] {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #e2c35d, #caa432, #f0d879);
-    background-size: 200% 200%;
-    box-shadow:
-      0 4px 12px rgba(0, 0, 0, 0.25),
-      0 0 8px rgba(212, 175, 55, 0.3);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1098,7 +1098,7 @@ button[type="submit"] {
 
   .box1 {
     grid-column: 1 / 2;
-    display: block; 
+    display: block;
     position: relative;
     overflow: hidden;
   }
@@ -1159,13 +1159,13 @@ button[type="submit"] {
       -4px -4px 8px rgba(255, 255, 255, 0.05),
       inset 0 1px 2px rgba(255, 255, 255, 0.1);
     animation: gradientShift 10s ease-in-out infinite;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
   }
 
   .merged-top {
     grid-row: 1 / 2;
-    padding: 0;
-    position: relative;
-    overflow: hidden;
   }
 
   .merged-bottom {
@@ -1301,7 +1301,7 @@ button[type="submit"] {
   .box1 .scroll-content {
     overflow-y: auto;
     flex: 1;
-    padding-right: 0.4rem; 
+    padding-right: 0.4rem;
     box-sizing: border-box;
   }
 
