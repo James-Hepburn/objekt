@@ -185,7 +185,14 @@ export default function CartPage() {
                 </label>
               </form>
             </div>
-            <div className="merged-bottom"></div>
+            <div className="merged-bottom">
+              <h2>Total Summary</h2>
+              <p>Subtotal: ${subtotal.toFixed(2)}</p>
+              <p>Tax (5%): ${tax.toFixed(2)}</p>
+              <p>Shipping: ${shipping.toFixed(2)}</p>
+              <h3>Total: ${total.toFixed(2)}</h3>
+              <button>Place Order</button>
+            </div>
             <div className="middle-section">
               <div className="left-half">
                 <div className="box box3">
@@ -211,7 +218,6 @@ export default function CartPage() {
                 <p>Subtotal: ${subtotal.toFixed(2)}</p>
                 <p>Tax (5%): ${tax.toFixed(2)}</p>
                 <p>Shipping: ${shipping.toFixed(2)}</p>
-                <hr />
                 <h3>Total: ${total.toFixed(2)}</h3>
                 <button>Place Order</button>
               </div>
