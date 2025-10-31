@@ -140,7 +140,51 @@ export default function CartPage() {
                 </label>
               </form>
             </div>
-            <div className="merged-top"></div>
+            <div className="merged-top">
+              <h2>Personal Information</h2>
+              <form className="cart-form">
+                <label>
+                  Full Name:
+                  <input
+                    type="text"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    required
+                  />
+                </label>
+                <label>
+                  Card Information:
+                  <input
+                    type="text"
+                    name="cardInfo"
+                    value={formData.cardInfo}
+                    onChange={handleChange}
+                    required
+                  />
+                </label>
+                <label>
+                  Billing Address:
+                  <input
+                    type="text"
+                    name="billingAddress"
+                    value={formData.billingAddress}
+                    onChange={handleChange}
+                    required
+                  />
+                </label>
+                <label>
+                  Shipping Address:
+                  <input
+                    type="text"
+                    name="shippingAddress"
+                    value={formData.shippingAddress}
+                    onChange={handleChange}
+                    required
+                  />
+                </label>
+              </form>
+            </div>
             <div className="merged-bottom"></div>
             <div className="middle-section">
               <div className="left-half">
