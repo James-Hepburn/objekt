@@ -1025,9 +1025,16 @@ button[type="submit"] {
   display: none !important;
 }
 
-/* PRODUCT NAME AND DESCRIPTION HIDDEN */
+/* MOBILE SHOP PAGE HIDDEN */
 .shop-page .mobile-product-name, 
 .shop-page .mobile-product-description {
+  display: none;
+}
+
+.mobile-order-section .mobile-price,
+.mobile-order-section .mobile-add-to-cart-btn,
+.shop-page .merged-top .mobile-quantity-controls,
+.shop-page .merged-bottom .mobile-order-section {
   display: none;
 }
 
