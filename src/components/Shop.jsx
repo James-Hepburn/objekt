@@ -10,7 +10,7 @@ import "./CommonStyles.css";
 export default function Work() {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [quantity, setQuantity] = useState(1000);
+  const [quantity, setQuantity] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
@@ -198,8 +198,24 @@ export default function Work() {
               <p>{product.description}</p>
             </div>
 
-            <div className="merged-top"></div>
-            <div className="merged-bottom"></div>
+            <div className="merged-top">
+              <div className="mobile-quantity-controls">
+                <h2>Quantity</h2>
+                <span className="quantity-number">{quantity}</span>
+                <div className="quantity-row">
+                  <button className="minus" onClick={handleMinus}>−</button>
+                  <button className="plus" onClick={handlePlus}>+</button>
+                </div>
+              </div>
+            </div>
+            <div className="merged-bottom">
+              <div className="mobile-order-section">
+                <h2 className="mobile-price">{product.price}</h2>
+                <button className="mobile-add-btn" onClick={handleAdd}>
+                  Add to Order
+                </button>
+              </div>
+            </div>
 
             <div className="middle-section">
               <div className="left-half">
