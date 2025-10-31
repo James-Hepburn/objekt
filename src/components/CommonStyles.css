@@ -1098,6 +1098,9 @@ button[type="submit"] {
 
   .box1 {
     grid-column: 1 / 2;
+    display: block; 
+    position: relative;
+    overflow: hidden;
   }
 
   .home-page .box1 {
@@ -1282,5 +1285,40 @@ button[type="submit"] {
     color: #333;
     cursor: pointer;
     line-height: 1;
+  }
+
+  .box1 .box-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    height: 100%;
+    padding: 1rem 1.2rem;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .box1 .scroll-content {
+    overflow-y: auto;
+    flex: 1;
+    padding-right: 0.4rem; 
+    box-sizing: border-box;
+  }
+
+  .box1 h2 {
+    margin: 0 0 0.8rem;
+    padding: 0;
+    font-size: 1.2rem;
+    font-weight: black;
+    text-align: left;
+  }
+
+  .box1 p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #222;
+    margin: 0;
+    text-align: left;
+    font-weight: normal;
   }
 }
