@@ -56,12 +56,13 @@ export default function About() {
               <h2>Our Story</h2>
               <div className="scroll-content">
                 <p>
-                  Florus ventorum vagus per verba inanissima fluit, dum sonus
-                  levitatis circumvolvitur in aere vacuo. Nihil de nihilo
-                  loquitur, et tamen verba manent, quasi sensum aliquem
-                  simulantia. Umbrae sententiarum sine mente ludunt, saltantes
-                  inter syllabas otiosas. Ita textus procedit, nec finem nec
-                  initium quaerens, sed in perpetuum de rebus nullis garriens.
+                  At C.HAUS Objekt, we believe that the most meaningful gifts tell a story. Rooted in culture and crafted with intention, our pieces are designed to celebrate tradition, artistry, and connection. Each object is more than a product, it’s a reflection of heritage, design, and heart.
+                  <br /><br />
+                  We specialize in creating one-of-a-kind gifts that fuse cultural inspiration with thoughtful craftsmanship. From the materials we use to the stories behind each design, every detail is considered to ensure you’re giving something truly unique and personal.
+                  <br /><br />
+                  In addition to our curated collection, we collaborate with organizations and companies to design custom cultural and brand-centered products that reflect their values, foster community, and strengthen company culture through meaningful design.
+                  <br /><br />
+                  C.HAUS Objekt is where culture meets creativity, bringing you objects of meaning for every occasion, from personal milestones to collective celebrations.
                 </p>
               </div>
             </div>
