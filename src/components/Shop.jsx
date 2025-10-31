@@ -12,9 +12,10 @@ export default function Work() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [quantity, setQuantity] = useState(1000);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isLightboxOpen, setIsLightboxOpen] = useState(false)
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
 
-  const products = [
+  const desktopProducts = [
     {
       image: "/WEBSITE TSHIRTS-01.png",
       description: "This is the description for Product 1",
@@ -35,6 +36,33 @@ export default function Work() {
     },
     {
       image: "/WEBSITE TSHIRTS-04.png",
+      description: "This is the description for Product 4",
+      price: "$40.00",
+      info: "Name of Product 4",
+    },
+  ];
+
+  const mobileProducts = [
+    {
+      image: "/WEBSITE TSHIRTS-01-Tall.png",
+      description: "This is the description for Product 1",
+      price: "$10.00",
+      info: "Name of Product 1",
+    },
+    {
+      image: "/WEBSITE TSHIRTS-02-Tall.png",
+      description: "This is the description for Product 2",
+      price: "$20.00",
+      info: "Name of Product 2",
+    },
+    {
+      image: "/WEBSITE TSHIRTS-03-Tall.png",
+      description: "This is the description for Product 3",
+      price: "$30.00",
+      info: "Name of Product 3",
+    },
+    {
+      image: "/WEBSITE TSHIRTS-04-Tall.png",
       description: "This is the description for Product 4",
       price: "$40.00",
       info: "Name of Product 4",
@@ -92,6 +120,7 @@ export default function Work() {
     setQuantity(0);
   };
 
+  const products = isMobile ? mobileProducts : desktopProducts;
   const product = products[currentIndex];
 
   return (
@@ -150,6 +179,9 @@ export default function Work() {
               onClick={() => setIsLightboxOpen(true)}
               style={{ cursor: "zoom-in" }}
             >
+              <h2 className="mobile-product-name">{product.info}</h2>
+              <p className="mobile-product-description">{product.description}</p>
+              
               <img
                 src={product.image}
                 alt={`Product ${currentIndex + 1}`}
