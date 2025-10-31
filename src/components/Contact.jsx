@@ -79,7 +79,7 @@ export default function Contact() {
                 type="text"
                 id="name"
                 name="name"
-                placeholder="Your full name"
+                placeholder="Full Name"
                 required
               />
 
@@ -88,7 +88,7 @@ export default function Contact() {
                 type="email"
                 id="email"
                 name="email"
-                placeholder="you@example.com"
+                placeholder="Email"
                 required
               />
 
@@ -97,7 +97,7 @@ export default function Contact() {
                 type="tel"
                 id="phone"
                 name="phone"
-                placeholder="(123) 456-7890"
+                placeholder="Phone"
               />
 
               <label htmlFor="message">Message</label>
@@ -105,7 +105,7 @@ export default function Contact() {
                 id="message"
                 name="message"
                 rows="4"
-                placeholder="Your message..."
+                placeholder="Your message here..."
                 required
               ></textarea>
 
@@ -122,7 +122,12 @@ export default function Contact() {
               <p>Facebook: examplePage</p>
             </div>
 
-            <div className="merged-top"></div>
+            <div className="merged-top">
+              <h2>Socials</h2>
+              <p>info@chausobjekt.com</p>
+              <p>instagramUsername</p>
+              <p>facebookPage</p>
+            </div>
             <div className="merged-bottom"></div>
 
             <div className="middle-section">
