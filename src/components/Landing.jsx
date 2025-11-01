@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import "./Landing.css";
@@ -14,9 +14,24 @@ export default function Landing() {
   const baseControls = useAnimation();
   const giftRef = useRef(null);
   const baseRef = useRef(null);
+  const [confettiPieces, setConfettiPieces] = useState([]);
 
   useEffect(() => {
     import("./Home");
+
+    const createConfetti = () => {
+      const pieces = Array.from({ length: 40 }).map((_, i) => ({
+        id: i,
+        left: `${Math.random() * 100}%`,
+        size: Math.random() * 8 + 4,
+        delay: Math.random() * 0.3,
+        color: Math.random() > 0.5 ? "#000" : "#fff",
+        x: (Math.random() - 0.5) * 200,
+        y: -Math.random() * 200 - 150,
+        rotate: Math.random() * 720 - 360,
+      }));
+      setConfettiPieces(pieces);
+    };
 
     const handleScroll = () => {
       if (!giftRef.current) return;
@@ -34,6 +49,7 @@ export default function Landing() {
               y: "-120vh",
               transition: { duration: 0.9, ease: [0.45, 0, 0.55, 1] },
             });
+            createConfetti();
           });
 
         messageControls.start({
@@ -174,6 +190,39 @@ export default function Landing() {
       </div>
 
       <div className="gift-box" ref={giftRef}>
+        {confettiPieces.map((piece) => (
+          <motion.div
+            key={piece.id}
+            initial={{
+              opacity: 0,
+              y: 0,
+              x: 0,
+              rotate: 0,
+            }}
+            animate={{
+              opacity: [1, 0.9, 0],
+              y: piece.y,
+              x: piece.x,
+              rotate: piece.rotate,
+              transition: {
+                duration: 2.2,
+                ease: "easeOut",
+                delay: piece.delay,
+              },
+            }}
+            style={{
+              position: "absolute",
+              bottom: window.innerWidth <= 900 ? "140px" : "280px",
+              left: piece.left,
+              width: piece.size,
+              height: piece.size * 0.6,
+              backgroundColor: piece.color,
+              borderRadius: 2,
+              zIndex: 250,
+            }}
+          />
+        ))}
+
         <motion.div
           className="name-track"
           initial={{ opacity: 1, y: 40 }}
