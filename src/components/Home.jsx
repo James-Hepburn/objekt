@@ -99,7 +99,7 @@ export default function Home() {
 
       <main>
         <div className="content-container">
-          <div className="box box1">
+          <div className="box box1 desktop-only">
             <img src="/Logo-Tall-Transparent.png" alt="Logo" className="box1-image" />
           </div>
 
@@ -140,7 +140,14 @@ export default function Home() {
               )}
             </div>
 
-            <div className="merged-top">
+            <div className="merged-top mobile-only">
+              <img
+                src="/Logo-Tall-Transparent.png"
+                alt="Logo"
+                className="mobile-logo"
+              />
+            </div>
+            <div className="merged-bottom mobile-only">
               {showMailingList && (
                 <motion.div
                   className="mailing-list-mobile"
@@ -173,7 +180,6 @@ export default function Home() {
                 </motion.div>
               )}
             </div>
-            <div className="merged-bottom"></div>
 
             <div className="middle-section">
               <div className="left-half">
