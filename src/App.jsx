@@ -18,7 +18,7 @@ const Home = lazy(() => import("./components/Home"));
 const Services = lazy(() => import("./components/Services"));
 const About = lazy(() => import("./components/About"));
 const Contact = lazy(() => import("./components/Contact"));
-const Shop = lazy(() => import("./components/Shop"));
+const Shop = lazy(() => import("./components/ShopComingSoon"));
 const Work = lazy(() => import("./components/Work"));
 const CartPage = lazy(() => import("./components/CartPage"));
 

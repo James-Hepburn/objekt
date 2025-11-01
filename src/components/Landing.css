@@ -132,7 +132,7 @@
   display: inline; 
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 900px) {
   .landing-page {
     justify-content: flex-start;
     padding-top: 8vh;
