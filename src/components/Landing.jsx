@@ -24,40 +24,48 @@ export default function Landing() {
       const triggerPoint = window.innerHeight / 2;
 
       if (boxTop < triggerPoint) {
-        lidControls.start({
-          y: "-120vh",
-          transition: { duration: 2.5, ease: "easeInOut" },
-        });
+        lidControls
+          .start({
+            x: [0, -8, 8, -6, 6, -4, 4, -2, 2, 0],
+            transition: { duration: 0.6, ease: "easeInOut" },
+          })
+          .then(() => {
+            lidControls.start({
+              y: "-120vh",
+              transition: { duration: 0.9, ease: [0.45, 0, 0.55, 1] },
+            });
+          });
 
         messageControls.start({
           opacity: 0,
-          y: 20,
-          transition: { duration: 1.2, ease: "easeInOut" },
+          y: 30,
+          transition: { duration: 0.5, ease: "easeInOut" },
         });
 
         const isMobile = window.innerWidth <= 900;
+        const nameDelay = isMobile ? 0.6 : 0.3;
 
         nameTrackControls.start({
           opacity: 1,
           y: isMobile ? -100 : -220,
-          transition: { duration: 2, ease: "easeOut", delay: 0.1 },
+          transition: { duration: 1, ease: "easeOut", delay: nameDelay },
         });
 
         nameTrackControls.start({
           opacity: 0,
-          transition: { duration: 2.2, ease: "easeInOut", delay: 2.2 },
+          transition: { duration: 1, ease: "easeInOut", delay: 1.8 },
         });
 
         mottoFadeControls
           .start({
             opacity: 1,
-            transition: { duration: 1.5, ease: "easeInOut", delay: 4.0 },
+            transition: { duration: 0.8, ease: "easeInOut", delay: 2.4 },
           })
           .then(() => {
             bgControls
               .start({
                 opacity: 1,
-                transition: { duration: 3, ease: "easeInOut" },
+                transition: { duration: 1.5, ease: "easeInOut" },
               })
               .then(() => {
                 bgControls.set({ opacity: 1 });
@@ -67,7 +75,7 @@ export default function Landing() {
               mottoFadeControls
                 .start({
                   opacity: 0,
-                  transition: { duration: 0.8, ease: "easeInOut" },
+                  transition: { duration: 0.5, ease: "easeInOut" },
                 })
                 .then(() => {
                   const grid = document.getElementById("grid-placeholder");
@@ -86,22 +94,11 @@ export default function Landing() {
                       scaleX,
                       scaleY,
                       border: "2px solid #000000",
-                      borderRadius: [
-                        "20px",
-                        "18px",
-                        "16px",
-                        "14px",
-                        "12px",
-                        "10px",
-                        "8px",
-                      ],
+                      borderRadius: ["20px", "16px", "12px", "8px"],
                       transition: {
-                        duration: 2.5,
+                        duration: 1.6,
                         ease: [0.22, 1, 0.36, 1],
-                        borderRadius: {
-                          duration: 2.5,
-                          ease: "easeInOut",
-                        },
+                        borderRadius: { duration: 1.6, ease: "easeInOut" },
                       },
                     })
                     .then(() => {
@@ -110,7 +107,7 @@ export default function Landing() {
                       }, 200);
                     });
                 });
-            }, 2000);
+            }, 1300);
           });
 
         window.removeEventListener("scroll", handleScroll);
@@ -139,7 +136,7 @@ export default function Landing() {
     <motion.div
       className="landing-page"
       exit={{ opacity: 0 }}
-      transition={{ duration: 1.2, ease: "easeInOut" }}
+      transition={{ duration: 0.8, ease: "easeInOut" }}
     >
       <motion.div
         className="background-image"
@@ -197,7 +194,7 @@ export default function Landing() {
           className="gift-lid"
           animate={lidControls}
           style={{
-            transformOrigin: "left bottom",
+            transformOrigin: "center bottom",
             perspective: 800,
             zIndex: 200,
           }}
