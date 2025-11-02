@@ -145,26 +145,44 @@
 }
 
 @media screen and (max-width: 900px) {
+  .shop-coming-soon {
+    justify-content: flex-start;
+    overflow-y: auto;
+    min-height: 100vh;
+  }
+
   .gift-box-row {
     flex-direction: column;
-    gap: 2.5rem;
+    align-items: center;
+    gap: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 100px !important;
   }
 
   .gift-box {
-    width: 60vw;
+    width: 65vw;
     height: 45vw;
+    position: relative;
+    gap: 0 !important;
+    margin-top: 0 !important;
   }
 
   .gift-lid {
     height: 12vw;
+    width: 70vw;
+    left: -2.5vw;
+    top: 1.5vw;
   }
 
   .gift-base {
+    width: 65vw;
     height: 33vw;
+    bottom: 0;
   }
 
   .coming-soon-title {
     font-size: 2rem;
+    margin-top: 15rem;
   }
 
   .coming-soon-description {

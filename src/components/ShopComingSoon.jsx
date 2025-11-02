@@ -37,7 +37,7 @@ export default function ShopComingSoon() {
       x: (Math.random() - 0.5) * 200,
       y: -Math.random() * 200 - 150,
       rotate: Math.random() * 720 - 360,
-      bottom: window.innerWidth <= 900 ? "80px" : "85px",
+      bottom: window.innerWidth <= 900 ? "130px" : "85px",
     }));
     setConfetti(pieces);
   };
