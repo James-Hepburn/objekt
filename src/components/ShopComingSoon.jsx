@@ -9,6 +9,7 @@ export default function ShopComingSoon() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [confetti, setConfetti] = useState([]);
   const [activeBox, setActiveBox] = useState(null);
+  const [winnerBox, setWinnerBox] = useState(null);
   const lids = [useAnimation(), useAnimation(), useAnimation()];
 
   useEffect(() => {
@@ -16,29 +17,29 @@ export default function ShopComingSoon() {
     const rightNav = document.getElementById("rightNav");
 
     const handleClick = () => {
-        rightNav.classList.toggle("open");
-        menuToggle.textContent = rightNav.classList.contains("open") ? "✕" : "☰";
+      rightNav.classList.toggle("open");
+      menuToggle.textContent = rightNav.classList.contains("open") ? "✕" : "☰";
     };
 
     menuToggle.addEventListener("click", handleClick);
 
     const savedIndex = localStorage.getItem("openedBoxIndex");
     if (savedIndex !== null) {
-        setActiveBox(Number(savedIndex));
+      setActiveBox(Number(savedIndex));
     }
 
     const handleKeyDown = (e) => {
-        if (e.key.toLowerCase() === "r") {
-            localStorage.removeItem("openedBoxIndex");
-            window.location.reload();
-        }
+      if (e.key.toLowerCase() === "r") {
+        localStorage.removeItem("openedBoxIndex");
+        window.location.reload();
+      }
     };
 
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
-        menuToggle.removeEventListener("click", handleClick);
-        window.removeEventListener("keydown", handleKeyDown);
+      menuToggle.removeEventListener("click", handleClick);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
 
@@ -63,31 +64,44 @@ export default function ShopComingSoon() {
   };
 
   const openBox = (index, color) => {
-  if (activeBox !== null || localStorage.getItem("openedBoxIndex") !== null) return;
-  setActiveBox(index);
-  localStorage.setItem("openedBoxIndex", index);
+    if (activeBox !== null || localStorage.getItem("openedBoxIndex") !== null) return;
 
-  const box = document.querySelector(`.gift-box-${index + 1}`);
-    box.classList.add("animating");
+    const roll = Math.random();
+    let winnerIndex;
+
+    if (roll <= 0.1) {
+      winnerIndex = index;
+    } else {
+      const otherBoxes = [0, 1, 2].filter((i) => i !== index);
+      winnerIndex = otherBoxes[Math.floor(Math.random() * otherBoxes.length)];
+    }
+
+    localStorage.setItem("openedBoxIndex", winnerIndex);
+    setActiveBox(index);
+
+    const clickedBox = document.querySelector(`.gift-box-${index + 1}`);
+    clickedBox.classList.add("animating");
 
     lids[index]
-        .start({
+      .start({
         x: [0, -8, 8, -6, 6, -4, 4, -2, 2, 0],
         transition: { duration: 0.6, ease: "easeInOut" },
-        })
-        .then(() => {
+      })
+      .then(() => {
         lids[index].start({
-            y: [0, -40, -80, -160],
-            rotateX: [0, -25, -35],
-            scale: [1, 1.05, 1],
-            transition: { duration: 1.4, ease: [0.45, 0, 0.55, 1] },
+          y: [0, -40, -80, -160],
+          rotateX: [0, -25, -35],
+          scale: [1, 1.05, 1],
+          transition: { duration: 1.4, ease: [0.45, 0, 0.55, 1] },
         });
         createConfetti(color, index);
-        setTimeout(() => {
-            box.classList.remove("animating");
-        }, 1400);
-        });
-    };
+        setTimeout(() => clickedBox.classList.remove("animating"), 1400);
+      });
+
+    setTimeout(() => {
+      setWinnerBox(winnerIndex);
+    }, 2000);
+  };
 
   const boxColors = ["#CCFF00", "#00F6FF", "#FF6EC7"];
 
@@ -129,9 +143,9 @@ export default function ShopComingSoon() {
         <div className="gift-box-row">
           {boxColors.map((color, index) => (
             <div
-                key={index}
-                className={`gift-box gift-box-${index + 1} ${activeBox === index ? "opened" : ""}`}
-                onClick={() => openBox(index, color)}
+              key={index}
+              className={`gift-box gift-box-${index + 1} ${activeBox === index ? "opened" : ""} ${winnerBox === index ? "glow" : ""}`}
+              onClick={() => openBox(index, color)}
             >
               {confetti
                 .filter((c) => c.id.startsWith(`${index}-`))
@@ -170,10 +184,7 @@ export default function ShopComingSoon() {
                   backgroundColor: color,
                 }}
               ></motion.div>
-              <div
-                className="gift-base"
-                style={{ backgroundColor: color }}
-              ></div>
+              <div className="gift-base" style={{ backgroundColor: color }}></div>
             </div>
           ))}
         </div>

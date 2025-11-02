@@ -32,6 +32,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: box-shadow 0.5s ease;
 }
 
 .gift-lid,
@@ -146,6 +147,36 @@
 
 .lid-open {
   transform: translateY(-160px) rotateX(-35deg);
+}
+
+.gift-box.glow .gift-lid,
+.gift-box.glow .gift-base {
+  box-shadow:
+    0 0 10px 3px currentColor,
+    0 0 20px 6px currentColor,
+    0 0 30px 10px currentColor;
+  outline: 1px solid currentColor;
+  background-color: inherit;
+  animation: borderPulse 1.6s ease-in-out infinite alternate;
+  transition: box-shadow 0.3s ease;
+}
+
+@keyframes borderPulse {
+  0% {
+    box-shadow:
+      0 0 6px 2px currentColor,
+      0 0 12px 4px currentColor;
+  }
+  100% {
+    box-shadow:
+      0 0 16px 6px currentColor,
+      0 0 28px 10px currentColor;
+  }
+}
+
+.gift-lid,
+.gift-base {
+  color: inherit;
 }
 
 @media screen and (max-width: 900px) {
