@@ -89,8 +89,8 @@ export default function Home() {
         </button>
 
         <div className={`right-nav ${menuOpen ? "open" : ""}`} id="rightNav">
-          <button className="nav-btn" onClick={() => navigate("/services")}>Services</button>
           <button className="nav-btn" onClick={() => navigate("/work")}>Work</button>
+          <button className="nav-btn" onClick={() => navigate("/services")}>Services</button>
           <button className="nav-btn" onClick={() => navigate("/shop")}>Shop</button>
           <button className="nav-btn" onClick={() => navigate("/about")}>About</button>
           <button className="nav-btn" onClick={() => navigate("/contact")}>Contact</button>

@@ -49,12 +49,10 @@ export default function Contact() {
         </button>
 
         <div className={`right-nav ${menuOpen ? "open" : ""}`} id="rightNav">
-          <button className="nav-btn" onClick={() => navigate("/services")}>
-            Services
-          </button>
           <button className="nav-btn" onClick={() => navigate("/work")}>
             Work
           </button>
+          <button className="nav-btn" onClick={() => navigate("/services")}>Services</button>
           <button className="nav-btn" onClick={() => navigate("/shop")}>
             Shop
           </button>

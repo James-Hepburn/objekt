@@ -114,7 +114,7 @@ export default function ShopComingSoon() {
     }, 2000);
   };
 
-  const boxColors = ["#CCFF00", "#00F6FF", "#FF6EC7"];
+  const boxColors = ["#E9468D", "#00B1D2", "#F47A42"];
 
   const messageText =
     winnerBox !== null && activeBox !== null
@@ -144,8 +144,8 @@ export default function ShopComingSoon() {
         </button>
 
         <div className={`right-nav ${menuOpen ? "open" : ""}`} id="rightNav">
-          <button className="nav-btn" onClick={() => navigate("/services")}>Services</button>
           <button className="nav-btn" onClick={() => navigate("/work")}>Work</button>
+          <button className="nav-btn" onClick={() => navigate("/services")}>Services</button>
           <button className="nav-btn" onClick={() => navigate("/shop")}>Shop</button>
           <button className="nav-btn" onClick={() => navigate("/about")}>About</button>
           <button className="nav-btn" onClick={() => navigate("/contact")}>Contact</button>
