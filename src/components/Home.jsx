@@ -149,7 +149,16 @@ export default function Home() {
 
             <div className="middle-section">
               <div className="left-half">
-                <div className="box box3"></div>
+                <div className="box box3 desktop-only">
+                  <div className="coming-soon-coin">
+                    <div className="coin-face coin-front">
+                      <span className="coin-text">SHOP COMING SOON</span>
+                    </div>
+                    <div className="coin-face coin-back">
+                      <span className="coin-text">C. HAUS OBJEKT</span>
+                    </div>
+                  </div>
+                </div>
                 <div className="bottom-row">
                   <div className="box box5-left"></div>
                   <div className="box box5-right"></div>

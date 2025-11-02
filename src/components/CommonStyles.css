@@ -397,7 +397,7 @@ body {
   justify-content: center;
   align-items: stretch;
   height: 100%;
-  gap: 7px;
+  gap: 20px;
 }
 
 .box2 {
@@ -1056,6 +1056,124 @@ button[type="submit"] {
   display: none;
 }
 
+/* === SHOP COMING SOON COIN (TWO-SIDED SPIN) === */
+.box3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.coming-soon-coin {
+  width: 150px;
+  height: 220px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: coinFlip 8s linear infinite;
+  transition: transform 0.8s ease, box-shadow 0.8s ease;
+  cursor: pointer;
+}
+
+@keyframes coinFlip {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+.coming-soon-coin:hover {
+  animation-play-state: paused;
+  transform: scale(1.08);
+}
+
+.coin-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at 30% 30%, #f8e27f, #d4af37 40%, #b98a1d 70%, #6b5b28 100%);
+  box-shadow:
+    0 0 25px rgba(212, 175, 55, 0.6),
+    inset 0 0 18px rgba(255, 255, 255, 0.25),
+    inset 0 4px 10px rgba(255, 255, 255, 0.3);
+  transform: translateZ(2px);
+}
+
+.coin-front .coin-text,
+.coin-back .coin-text {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #fffdf2;
+  text-shadow:
+    0 0 6px rgba(212, 175, 55, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.6);
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.coin-back {
+  transform: rotateY(180deg);
+  background: radial-gradient(circle at 70% 70%, #f8e27f, #d4af37 40%, #b98a1d 70%, #6b5b28 100%);
+}
+
+.coming-soon-coin:hover .coin-face {
+  box-shadow:
+    0 0 40px rgba(212, 175, 55, 0.8),
+    inset 0 0 25px rgba(255, 255, 255, 0.3);
+}
+
+/* === BOX 3 METALLIC BACKGROUND EFFECT (HOME PAGE ONLY) === */
+.home-page .box3 {
+  background: linear-gradient(
+    120deg,
+    #000 0%,
+    #1a1a1a 25%,
+    #000 50%,
+    #1a1a1a 75%,
+    #000 100%
+  );
+  background-size: 300% 300%;
+  animation: metallicSweep 8s linear infinite;
+  box-shadow:
+    inset 0 0 50px rgba(255, 255, 255, 0.05),
+    inset 0 0 120px rgba(255, 255, 255, 0.02),
+    0 0 30px rgba(0, 0, 0, 0.6);
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes metallicSweep {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.home-page .box3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  animation: lightGlide 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes lightGlide {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}
+
 /* RESPONSIVE */
 @media screen and (max-width: 900px) {
   form {
@@ -1639,5 +1757,9 @@ button[type="submit"] {
   .merged-bottom.mobile-only .mailing-list-mobile {
     background: transparent;
     box-shadow: none;
+  }
+
+  .coming-soon-coin {
+    display: none !important;
   }
 }
