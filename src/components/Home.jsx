@@ -176,8 +176,12 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="bottom-row">
-                  <div className="box box5-left"></div>
-                  <div className="box box5-right"></div>
+                  <button className="box box5-left box-link" onClick={() => navigate("/services")}>
+                    Services
+                  </button>
+                  <button className="box box5-right box-link" onClick={() => navigate("/contact")}>
+                    Contact
+                  </button>
                 </div>
               </div>
               <div className="box box4and6">
