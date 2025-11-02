@@ -104,41 +104,7 @@ export default function Home() {
           </div>
 
           <div className="right-column">
-            <div className="box box2">
-              {showMailingList ? (
-                <motion.div
-                  className="mailing-list-full"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <button
-                    className="close-btn"
-                    onClick={handleCloseMailingList}
-                    aria-label="Close mailing list"
-                  >
-                    ✕
-                  </button>
-
-                  <div className="mailing-list-content">
-                    <h2>Join Our Mailing List</h2>
-                    <form onSubmit={handleSubmit}>
-                      <input
-                        type="email"
-                        placeholder="Enter your email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                      />
-                      <button type="submit">Sign Up</button>
-                    </form>
-                  </div>
-                </motion.div>
-              ) : (
-                <div className="box2-placeholder"></div>
-              )}
-            </div>
+            <div className="box box2"></div>
 
             <div className="merged-top mobile-only">
               <img
@@ -189,7 +155,41 @@ export default function Home() {
                   <div className="box box5-right"></div>
                 </div>
               </div>
-              <div className="box box4and6"></div>
+              <div className="box box4and6">
+                {showMailingList ? (
+                  <motion.div
+                    className="mailing-list-full"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <button
+                      className="close-btn"
+                      onClick={handleCloseMailingList}
+                      aria-label="Close mailing list"
+                    >
+                      ✕
+                    </button>
+
+                    <div className="mailing-list-content">
+                      <h2>Join Our Mailing List</h2>
+                      <form onSubmit={handleSubmit}>
+                        <input
+                          type="email"
+                          placeholder="Enter your email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          required
+                        />
+                        <button type="submit">Sign Up</button>
+                      </form>
+                    </div>
+                  </motion.div>
+                ) : (
+                  <div className="box46-placeholder"></div>
+                )}
+              </div>
             </div>
           </div>
         </div>
