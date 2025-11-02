@@ -1295,6 +1295,72 @@ button[type="submit"] {
   100% { left: 125%; }
 }
 
+/* INFO PLACEHOLDER (when mailing list is hidden) */
+.info-placeholder,
+.info-placeholder-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  color: #111;
+  border-radius: 12px;
+}
+
+.info-placeholder-mobile {
+  padding: 1.5rem;
+}
+
+.info-placeholder h2,
+.info-placeholder-mobile h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #000;
+  font-weight: 700;
+}
+
+.info-placeholder-mobile h2 {
+  font-size: 1.2rem;
+}
+
+.info-placeholder p,
+.info-placeholder-mobile p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.gold-btn {
+  background: linear-gradient(135deg, #e2c35d, #caa432, #f0d879);
+  background-size: 200% 200%;
+  color: #fffdf2;
+  border: none;
+  border-radius: 30px;
+  padding: 0.7rem 1.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.25),
+    0 0 8px rgba(212, 175, 55, 0.3);
+  transition: all 0.3s ease;
+  animation: shimmer 6s ease-in-out infinite;
+}
+
+.gold-btn:hover {
+  background: linear-gradient(135deg, #f8e27f, #d8b84a, #b98a1d);
+  transform: translateY(-2px) scale(1.07);
+  box-shadow:
+    0 10px 22px rgba(212, 175, 55, 0.5),
+    0 0 12px rgba(255, 220, 120, 0.6);
+}
+
+.gold-btn:active {
+  transform: scale(0.96);
+  box-shadow: 0 3px 6px rgba(212, 175, 55, 0.3);
+}
+
 /* RESPONSIVE */
 @media screen and (max-width: 900px) {
   form {

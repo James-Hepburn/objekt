@@ -114,7 +114,7 @@ export default function Home() {
               />
             </div>
             <div className="merged-bottom mobile-only">
-              {showMailingList && (
+              {showMailingList ? (
                 <motion.div
                   className="mailing-list-mobile"
                   initial={{ opacity: 0 }}
@@ -144,6 +144,17 @@ export default function Home() {
                     </form>
                   </div>
                 </motion.div>
+              ) : (
+                <div className="info-placeholder-mobile">
+                  <h2>Want to learn more about us?</h2>
+                  <p>Click below for more info.</p>
+                  <button
+                    className="gold-btn"
+                    onClick={() => navigate("/about")}
+                  >
+                    Learn More
+                  </button>
+                </div>
               )}
             </div>
 
@@ -216,7 +227,16 @@ export default function Home() {
                     </div>
                   </motion.div>
                 ) : (
-                  <div className="box46-placeholder"></div>
+                  <div className="info-placeholder">
+                    <h2>Want to learn more about us?</h2>
+                    <p>Click below for more info.</p>
+                    <button
+                      className="gold-btn"
+                      onClick={() => navigate("/about")}
+                    >
+                      Learn More
+                    </button>
+                  </div>
                 )}
               </div>
             </div>
