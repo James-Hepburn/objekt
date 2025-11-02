@@ -179,7 +179,34 @@
   color: inherit;
 }
 
+.winner-message {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+  letter-spacing: 0.5px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInMessage 1s ease-in-out forwards;
+}
+
+@keyframes fadeInMessage {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media screen and (max-width: 900px) {
+  .winner-message {
+    position: relative;
+    top: -70px;
+    margin-top: 0;
+  }
+
   .shop-coming-soon {
     justify-content: flex-start;
     overflow-y: auto;

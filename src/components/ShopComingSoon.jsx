@@ -10,6 +10,7 @@ export default function ShopComingSoon() {
   const [confetti, setConfetti] = useState([]);
   const [activeBox, setActiveBox] = useState(null);
   const [winnerBox, setWinnerBox] = useState(null);
+  const [showMessage, setShowMessage] = useState(false);
   const lids = [useAnimation(), useAnimation(), useAnimation()];
 
   useEffect(() => {
@@ -23,13 +24,20 @@ export default function ShopComingSoon() {
 
     menuToggle.addEventListener("click", handleClick);
 
-    const savedIndex = localStorage.getItem("openedBoxIndex");
-    if (savedIndex !== null) {
-      setActiveBox(Number(savedIndex));
+    const savedWinner = localStorage.getItem("winnerBoxIndex");
+    const savedOpened = localStorage.getItem("openedBoxIndex");
+
+    if (savedWinner !== null) {
+      setWinnerBox(Number(savedWinner));
+      setShowMessage(true);
+    }
+    if (savedOpened !== null) {
+      setActiveBox(Number(savedOpened));
     }
 
     const handleKeyDown = (e) => {
       if (e.key.toLowerCase() === "r") {
+        localStorage.removeItem("winnerBoxIndex");
         localStorage.removeItem("openedBoxIndex");
         window.location.reload();
       }
@@ -76,7 +84,9 @@ export default function ShopComingSoon() {
       winnerIndex = otherBoxes[Math.floor(Math.random() * otherBoxes.length)];
     }
 
-    localStorage.setItem("openedBoxIndex", winnerIndex);
+    localStorage.setItem("winnerBoxIndex", winnerIndex);
+    localStorage.setItem("openedBoxIndex", index);
+
     setActiveBox(index);
 
     const clickedBox = document.querySelector(`.gift-box-${index + 1}`);
@@ -100,10 +110,18 @@ export default function ShopComingSoon() {
 
     setTimeout(() => {
       setWinnerBox(winnerIndex);
+      setShowMessage(true);
     }, 2000);
   };
 
   const boxColors = ["#CCFF00", "#00F6FF", "#FF6EC7"];
+
+  const messageText =
+    winnerBox !== null && activeBox !== null
+      ? winnerBox === activeBox
+        ? "You have won! Use code ZEBRA15 for 15% off your entire order!"
+        : "Better luck next time!"
+      : "";
 
   return (
     <div className="other-pages">
@@ -146,6 +164,7 @@ export default function ShopComingSoon() {
               key={index}
               className={`gift-box gift-box-${index + 1} ${activeBox === index ? "opened" : ""} ${winnerBox === index ? "glow" : ""}`}
               onClick={() => openBox(index, color)}
+              style={{ color }}
             >
               {confetti
                 .filter((c) => c.id.startsWith(`${index}-`))
@@ -188,6 +207,17 @@ export default function ShopComingSoon() {
             </div>
           ))}
         </div>
+
+        {showMessage && (
+          <motion.div
+            className="winner-message"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            {messageText}
+          </motion.div>
+        )}
       </main>
 
       <footer className="site-footer">
