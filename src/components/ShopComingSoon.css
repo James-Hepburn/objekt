@@ -144,6 +144,10 @@
   transform-origin: center bottom;
 }
 
+.lid-open {
+  transform: translateY(-160px) rotateX(-35deg);
+}
+
 @media screen and (max-width: 900px) {
   .shop-coming-soon {
     justify-content: flex-start;

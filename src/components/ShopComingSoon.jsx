@@ -14,12 +14,32 @@ export default function ShopComingSoon() {
   useEffect(() => {
     const menuToggle = document.getElementById("menuToggle");
     const rightNav = document.getElementById("rightNav");
+
     const handleClick = () => {
-      rightNav.classList.toggle("open");
-      menuToggle.textContent = rightNav.classList.contains("open") ? "✕" : "☰";
+        rightNav.classList.toggle("open");
+        menuToggle.textContent = rightNav.classList.contains("open") ? "✕" : "☰";
     };
+
     menuToggle.addEventListener("click", handleClick);
-    return () => menuToggle.removeEventListener("click", handleClick);
+
+    const savedIndex = localStorage.getItem("openedBoxIndex");
+    if (savedIndex !== null) {
+        setActiveBox(Number(savedIndex));
+    }
+
+    const handleKeyDown = (e) => {
+        if (e.key.toLowerCase() === "r") {
+            localStorage.removeItem("openedBoxIndex");
+            window.location.reload();
+        }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+        menuToggle.removeEventListener("click", handleClick);
+        window.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
 
   const createConfetti = (color, index) => {
@@ -43,8 +63,9 @@ export default function ShopComingSoon() {
   };
 
   const openBox = (index, color) => {
-  if (activeBox !== null) return; 
+  if (activeBox !== null || localStorage.getItem("openedBoxIndex") !== null) return;
   setActiveBox(index);
+  localStorage.setItem("openedBoxIndex", index);
 
   const box = document.querySelector(`.gift-box-${index + 1}`);
     box.classList.add("animating");
@@ -142,7 +163,7 @@ export default function ShopComingSoon() {
                   />
                 ))}
               <motion.div
-                className="gift-lid"
+                className={`gift-lid ${activeBox === index ? "lid-open" : ""}`}
                 animate={lids[index]}
                 style={{
                   transformOrigin: "center bottom",
