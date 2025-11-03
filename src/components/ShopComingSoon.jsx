@@ -158,6 +158,17 @@ export default function ShopComingSoon() {
           Click a gift below to reveal a surprise discount code you can use on future orders once our shop opens!
         </h4>
 
+        {showMessage && (
+          <motion.div
+            className="winner-message"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            {messageText}
+          </motion.div>
+        )}
+
         <div className="gift-box-row">
           {boxColors.map((color, index) => (
             <div
@@ -207,17 +218,6 @@ export default function ShopComingSoon() {
             </div>
           ))}
         </div>
-
-        {showMessage && (
-          <motion.div
-            className="winner-message"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            {messageText}
-          </motion.div>
-        )}
       </main>
 
       <footer className="site-footer">
