@@ -440,6 +440,10 @@ body {
   gap: 7px !important
 }
 
+.contact-page .right-column {
+  gap: 20px !important
+}
+
 .left-half {
   display: flex;
   flex-direction: column;
@@ -1375,14 +1379,6 @@ button[type="submit"] {
 }
 
 /* HOME PAGE WORKS SHOWCASE */
-.box2 {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .box2-carousel {
   width: 100%;
   height: 100%;
