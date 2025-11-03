@@ -13,6 +13,15 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showMailingList, setShowMailingList] = useState(false);
   const [email, setEmail] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+
+  const images = [
+    "/WEBSITE TSHIRTS-01.png",
+    "/WEBSITE TSHIRTS-02.png",
+    "/WEBSITE TSHIRTS-03.png",
+    "/WEBSITE TSHIRTS-04.png"
+  ];
 
   useEffect(() => {
     if (!hasShownMailingList) {
@@ -21,22 +30,28 @@ export default function Home() {
     }
 
     const handleScroll = () => {
-      const header = document.querySelector('.home-header');
-
+      const header = document.querySelector(".home-header");
       if (window.scrollY > 40) {
-        header.classList.add('scrolled');
+        header.classList.add("scrolled");
       } else {
-        header.classList.remove('scrolled');
+        header.classList.remove("scrolled");
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [location]);
 
-  const handleCloseMailingList = () => {
-    setShowMailingList(false);
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((i) => (i + 1) % images.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleNext = () => setCurrentIndex((i) => (i + 1) % images.length);
+  const handlePrev = () => setCurrentIndex((i) => (i - 1 + images.length) % images.length);
+  const handleCloseMailingList = () => setShowMailingList(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -104,7 +119,18 @@ export default function Home() {
           </div>
 
           <div className="right-column">
-            <div className="box box2"></div>
+            <div className="box box2">
+              <div className="box2-carousel">
+                <button className="arrow left" onClick={handlePrev}>◀</button>
+                <img
+                  src={images[currentIndex]}
+                  alt={`Work ${currentIndex + 1}`}
+                  className="box2-image"
+                  onClick={() => setIsLightboxOpen(true)}
+                />
+                <button className="arrow right" onClick={handleNext}>▶</button>
+              </div>
+            </div>
 
             <div className="merged-top mobile-only">
               <img
@@ -242,6 +268,15 @@ export default function Home() {
             </div>
           </div>
         </div>
+        {isLightboxOpen && (
+          <div className="lightbox-overlay" onClick={() => setIsLightboxOpen(false)}>
+            <img
+              src={images[currentIndex]}
+              alt={`Work ${currentIndex + 1}`}
+              className="lightbox-image"
+            />
+          </div>
+        )}
       </main>
 
       <footer className="site-footer">
