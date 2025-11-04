@@ -49,6 +49,12 @@ export default function Landing() {
               y: "-120vh",
               transition: { duration: 0.9, ease: [0.45, 0, 0.55, 1] },
             });
+
+            const companyName = document.querySelector(".company-name");
+            if (companyName) {
+              companyName.classList.add("visible");
+            }
+
             createConfetti();
           });
 
