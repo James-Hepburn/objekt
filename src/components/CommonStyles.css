@@ -1493,6 +1493,44 @@ button[type="submit"] {
   opacity: 0.9;
 }
 
+/* FIX GRID HEIGHT FLICKER IN HOME PAGE */
+.home-page .box2-carousel {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.home-page .box2-image {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  background-color: transparent;
+}
+
+.home-page .box2 {
+  flex: 1;
+  height: 40%;
+  min-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-page .box2 {
+  height: 40%;
+  min-height: 280px;
+  max-height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* RESPONSIVE */
 @media screen and (max-width: 900px) {
   form {
