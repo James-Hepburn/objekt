@@ -1531,6 +1531,11 @@ button[type="submit"] {
   align-items: center;
 }
 
+/* FIX GAP */
+.other-pages .middle-section {
+  gap: 5px !important;
+}
+
 /* RESPONSIVE */
 @media screen and (max-width: 900px) {
   form {
