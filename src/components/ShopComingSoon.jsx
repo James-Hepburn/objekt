@@ -77,7 +77,7 @@ export default function ShopComingSoon() {
     const roll = Math.random();
     let winnerIndex;
 
-    if (roll <= 0.1) {
+    if (roll <= 0.33) {
       winnerIndex = index;
     } else {
       const otherBoxes = [0, 1, 2].filter((i) => i !== index);
