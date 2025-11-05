@@ -1652,7 +1652,6 @@ button[type="submit"] {
     height: 100%;
     width: 100%;
     position: relative;
-    overflow: hidden;
   }
 
   .box2,
@@ -1695,12 +1694,12 @@ button[type="submit"] {
 
   .merged-top:hover,
   .merged-bottom:hover {
+    transform: scale(1.04);
+    background-position: 100% 0;
     box-shadow:
-      6px 10px 18px rgba(0, 0, 0, 0.4),
-      0 0 12px rgba(212, 175, 55, 0.4);
-    border-radius: 14px !important;
-    transform: scale(1.02);
-    overflow: hidden !important;
+      8px 12px 22px rgba(0, 0, 0, 0.45),
+      -2px -2px 6px rgba(255, 255, 255, 0.07),
+      0 0 16px rgba(212, 175, 55, 0.4);
   }
 
   .site-footer {
@@ -2140,5 +2139,13 @@ button[type="submit"] {
   .typography-h2,
   .typography-h3 {
     letter-spacing: -0.01em;
+  }
+
+  .other-pages .merged-top {
+    height: 94%;
+  }
+
+  .contact-page .merged-top {
+    height: 100% !important;
   }
 }
