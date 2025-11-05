@@ -25,7 +25,7 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Form submitted! (Backend integration coming soon)");
+    alert("Thanks for your message!");
   };
 
   return (
@@ -69,7 +69,14 @@ export default function Contact() {
         <div className="content-container">
           {}
           <div className="box box1">
-            <form onSubmit={handleSubmit}>
+            <form 
+              name="contact" 
+              method="POST" 
+              data-netlify="true" 
+              onSubmit={handleSubmit}
+            >
+              <input type="hidden" name="form-name" value="contact" />
+
               <h2>Contact Form</h2>
 
               <label htmlFor="name">Name</label>
