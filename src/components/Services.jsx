@@ -22,7 +22,7 @@ export default function Services() {
   }, []);
 
   return (
-    <div className="other-pages">
+    <div className="other-pages service-page">
       <header className="home-header">
         <div className="left-nav">
           <div className="logo-placeholder" onClick={() => navigate("/home")}>
@@ -65,30 +65,45 @@ export default function Services() {
               <h2>Services</h2>
               <div className="scroll-content">
                 <p>
-                  Florus ventorum vagus per verba inanissima fluit, dum sonus
-                  levitatis circumvolvitur in aere vacuo. Nihil de nihilo
-                  loquitur, et tamen verba manent, quasi sensum aliquem
-                  simulantia. Umbrae sententiarum sine mente ludunt, saltantes
-                  inter syllabas otiosas. Ita textus procedit, nec finem nec
-                  initium quaerens, sed in perpetuum de rebus nullis garriens.
+                  At C.HAUS Objekt, we offer design and product services that blend 
+                  culture, creativity, and craftsmanship. Our work extends beyond 
+                  traditional gifting; we create meaningful, story-driven designs that 
+                  celebrate identity and connection.
                 </p>
+
+                <p className="list-title">We specialize in:</p>
+
+                <ul>
+                  <li>Custom Gift Design</li>
+                  <li>Brand & Organization Design</li>
+                  <li>Merchandise & Apparel</li>
+                  <li>Print & Stationery Design</li>
+                </ul>
               </div>
             </div>
           </div>
 
           <div className="right-column">
-            <div className="box box2"></div>
+            <div className="box box2">
+              <img src="/T-shirts.png" alt="T-shirt Designs" />
+            </div>
             <div className="merged-top"></div>
             <div className="merged-bottom"></div>
             <div className="middle-section">
               <div className="left-half">
                 <div className="box box3"></div>
                 <div className="bottom-row">
-                  <div className="box box5-left"></div>
-                  <div className="box box5-right"></div>
+                  <button className="box box5-left box-link" onClick={() => navigate("/contact")}>
+                    Contact
+                  </button>
+                  <button className="box box5-right box-link" onClick={() => navigate("/work")}>
+                    Work
+                  </button>
                 </div>
               </div>
-              <div className="box box4and6"></div>
+              <div className="box box4and6">
+                <img src="/Business-Card.png" alt="Business Card Design" />
+              </div>
             </div>
           </div>
         </div>
