@@ -1536,6 +1536,44 @@ button[type="submit"] {
   gap: 5px !important;
 }
 
+/* ABOUT PAGE */
+.about-page .box1 h1,
+.about-page .box3 h4,
+.about-page .box4and6 h1 {
+  font-weight: black;
+  color: black !important;
+}
+
+.about-page .box4and6 h1 {
+  font-size: x-large;
+}
+
+.box4and6 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  margin-left: 50px;
+}
+
+.box4and6 li {
+  font-size: 1.05rem;
+  color: #222;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  transition: color 0.3s ease, transform 0.25s ease;
+}
+
+.box4and6 li:last-child {
+  border-bottom: none;
+}
+
+.box4and6 li:hover {
+  color: #d4af37;
+  transform: translateX(6px);
+}
+
 /* RESPONSIVE */
 @media screen and (max-width: 900px) {
   form {
@@ -2177,15 +2215,6 @@ button[type="submit"] {
     box-sizing: border-box;
   }
 
-  .about-mobile-story .scroll-content::-webkit-scrollbar {
-    width: 4px;
-  }
-
-  .about-mobile-story .scroll-content::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 4px;
-  }
-
   .about-mobile-story p {
     font-size: 0.9rem;
     line-height: 1.45;
@@ -2205,5 +2234,49 @@ button[type="submit"] {
   .other-pages .merged-bottom {
     overflow: hidden;
     min-height: 0; 
+  }
+
+  .about-mobile-services {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    height: 100%;
+    width: 100%;
+    padding: 1rem 1.2rem;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .about-mobile-services h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: black;
+    margin: 0 0 0.6rem;
+  }
+
+  .about-mobile-services ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .about-mobile-services li {
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: black;
+    font-weight: normal;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    transition: color 0.3s ease, transform 0.25s ease;
+  }
+
+  .about-mobile-services li:last-child {
+    border-bottom: none;
+  }
+
+  .about-mobile-services li:hover {
+    color: #d4af37;
+    transform: translateX(5px);
   }
 }

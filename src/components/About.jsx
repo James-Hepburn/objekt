@@ -102,11 +102,23 @@ export default function About() {
                 </div>
               </div>
             </div>
-            <div className="merged-bottom"></div>
+            <div className="merged-bottom">
+              <div className="mobile-only about-mobile-services">
+                <h2>Our Services</h2>
+                <ul>
+                  <li>Custom Gift Design</li>
+                  <li>Brand & Organization Design</li>
+                  <li>Merchandise & Apparel</li>
+                  <li>Print & Stationery Design</li>
+                </ul>
+              </div>
+            </div>
 
             <div className="middle-section">
               <div className="left-half">
-                <div className="box box3"></div>
+                <div className="box box3">
+                  <h4>Based in Toronto, Canada</h4>
+                </div>
                 <div className="bottom-row">
                   <button className="box box5-left box-link" onClick={() => navigate("/contact")}>
                     Contact
@@ -116,7 +128,15 @@ export default function About() {
                   </button>
                 </div>
               </div>
-              <div className="box box4and6"></div>
+              <div className="box box4and6">
+                <h1>Our Services</h1>
+                <ul>
+                  <li>Custom Gift Design</li>
+                  <li>Brand & Organization Design</li>
+                  <li>Merchandise & Apparel</li>
+                  <li>Print & Stationery Design</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
