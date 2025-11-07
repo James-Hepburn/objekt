@@ -221,6 +221,13 @@
   pointer-events: auto;
 }
 
+.motto {
+  font-family: 'Tondu Beta', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
 @media screen and (max-width: 900px) {
   .landing-page {
     justify-content: flex-start;
