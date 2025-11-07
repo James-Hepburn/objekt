@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./ZebraPage.css";
 import "./CommonStyles.css";
+import "./Home.css";
 
 let hasShownMailingList = false;
 
