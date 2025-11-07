@@ -6,6 +6,7 @@ import CartIcon from "/src/CartIcon";
 
 import "./BlackPage.css";
 import "./CommonStyles.css";
+import "./Shop.css";
 
 export default function Work() {
   const navigate = useNavigate();
