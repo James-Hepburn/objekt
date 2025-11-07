@@ -10,8 +10,8 @@
   100% { background-position: 0% 50%; }
 }
 
-.home-page .bottom-row .box5-left,
-.home-page .bottom-row .box5-right {
+.bottom-row .box5-left,
+.bottom-row .box5-right {
     background: linear-gradient(135deg, #e2c35d, #caa432, #f0d879);
     background-size: 200% 200%;
     color: #fffdf2;
@@ -34,8 +34,8 @@
     padding: 0;
 }
 
-.home-page .bottom-row .box5-left:hover,
-.home-page .bottom-row .box5-right:hover {
+.bottom-row .box5-left:hover,
+.bottom-row .box5-right:hover {
     background: linear-gradient(135deg, #f8e27f, #d8b84a, #b98a1d);
     background-size: 300% 300%;
     color: #fff;
@@ -46,14 +46,14 @@
     animation: shimmer-hover 3s ease-in-out infinite;
 }
 
-.home-page .bottom-row .box5-left:active,
-.home-page .bottom-row .box5-right:active {
+.bottom-row .box5-left:active,
+.bottom-row .box5-right:active {
     transform: scale(0.96);
     box-shadow: 0 3px 6px rgba(212, 175, 55, 0.3);
 }
 
-.home-page .box5-left.box-link,
-.home-page .box5-right.box-link {
+.box5-left.box-link,
+.box5-right.box-link {
     border-radius: 12px;
     font-size: 2rem;
     font-weight: 700;

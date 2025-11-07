@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import "./BlackPage.css";
 import "./CommonStyles.css";
+import "./Services.css";
 
 export default function Services() {
   const navigate = useNavigate(); 
