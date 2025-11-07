@@ -114,10 +114,7 @@ export default function Contact() {
           </div>
           <div className="right-column">
             <div className="box box2">
-              <h2>Socials</h2>
-              <p>Email: info@chausobjekt.com</p>
-              <p>Instagram: exampleUsername</p>
-              <p>Facebook: examplePage</p>
+              <img src="/Logo-Motto.png" alt="Logo and Motto" />
             </div>
             <div className="merged-top">
               <h2>Socials</h2>
@@ -125,10 +122,14 @@ export default function Contact() {
               <p>instagramUsername</p>
               <p>facebookPage</p>
             </div>
-            <div className="merged-bottom"></div>
+            <div className="merged-bottom">
+              <img src="/Logo-Motto-Tall.png" alt="Logo and Motto" />
+            </div>
             <div className="middle-section">
               <div className="left-half">
-                <div className="box box3"></div>
+                <div className="box box3">
+                  <h4>Follow us for more surprises!</h4>
+                </div>
                 <div className="bottom-row">
                   <a href="mailto:info@chausobjekt.com" className="box box5-left box-link">
                     <img src={emailIcon} alt="Email" />
@@ -138,7 +139,12 @@ export default function Contact() {
                   </a>
                 </div>
               </div>
-              <div className="box box4and6"></div>
+              <div className="box box4and6">
+                <h2>Socials</h2>
+                <p>Email: info@chausobjekt.com</p>
+                <p>Instagram: exampleUsername</p>
+                <p>Facebook: examplePage</p>
+              </div>
             </div>
           </div>
         </div>
