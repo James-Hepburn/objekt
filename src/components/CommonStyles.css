@@ -1806,7 +1806,7 @@ button[type="submit"] {
     line-height: 1;
   }
 
-  .box1 .box-inner {
+  .box1 .box-inner{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -1830,6 +1830,7 @@ button[type="submit"] {
     font-size: 1.2rem;
     font-weight: black;
     text-align: left;
+    color: black;
   }
 
   .box1 p {
@@ -2147,5 +2148,62 @@ button[type="submit"] {
 
   .contact-page .merged-top {
     height: 100% !important;
+  }
+
+  .about-mobile-story {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    height: 100%;
+    width: 100%;
+    padding: 1rem 1.2rem;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .about-mobile-story h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 0.6rem;
+    color: black;
+    flex-shrink: 0; 
+  }
+
+  .about-mobile-story .scroll-content {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 0.3rem;
+    box-sizing: border-box;
+  }
+
+  .about-mobile-story .scroll-content::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .about-mobile-story .scroll-content::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+  }
+
+  .about-mobile-story p {
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: black;
+    font-weight: normal;
+    margin: 0;
+  }
+
+  .other-pages .right-column {
+    display: grid;
+    grid-template-rows: 1fr 1.5fr; 
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .other-pages .merged-top,
+  .other-pages .merged-bottom {
+    overflow: hidden;
+    min-height: 0; 
   }
 }

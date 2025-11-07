@@ -248,6 +248,7 @@
   }
 
   .company-name {
+    left: 0;
     position: absolute;
     bottom: 0;
     font-size: 2.5rem;

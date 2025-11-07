@@ -74,19 +74,34 @@ export default function About() {
                 <h2>Mission Story</h2>
                 <div className="scroll-content">
                   <p>
-                    Florus ventorum vagus per verba inanissima fluit, dum sonus
-                    levitatis circumvolvitur in aere vacuo. Nihil de nihilo
-                    loquitur, et tamen verba manent, quasi sensum aliquem
-                    simulantia. Umbrae sententiarum sine mente ludunt,
-                    saltantes inter syllabas otiosas. Ita textus procedit, nec
-                    finem nec initium quaerens, sed in perpetuum de rebus nullis
-                    garriens.
+                    At C.HAUS Objekt, our mission is to craft meaningful gifts 
+                    that tell a story. We celebrate culture, artistry, and connection 
+                    through thoughtfully designed objects that honour heritage and 
+                    inspire belonging. By blending traditional craftsmanship with 
+                    modern design, we create unique pieces and collaborate with 
+                    organizations to foster community, express identity, and make 
+                    every gift a lasting reflection of heart and purpose.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="merged-top"></div>
+            <div className="merged-top">
+              <div className="mobile-only about-mobile-story">
+                <h2>Mission Story</h2>
+                <div className="scroll-content">
+                  <p>
+                    At C.HAUS Objekt, our mission is to craft meaningful gifts 
+                    that tell a story. We celebrate culture, artistry, and connection 
+                    through thoughtfully designed objects that honour heritage and 
+                    inspire belonging. By blending traditional craftsmanship with 
+                    modern design, we create unique pieces and collaborate with 
+                    organizations to foster community, express identity, and make 
+                    every gift a lasting reflection of heart and purpose.
+                  </p>
+                </div>
+              </div>
+            </div>
             <div className="merged-bottom"></div>
 
             <div className="middle-section">
