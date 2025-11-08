@@ -114,8 +114,6 @@ body {
 .social-icons a,
 .box button,
 .contact-page form button[type="submit"],
-.about-page .bottom-row .box5-left,
-.about-page .bottom-row .box5-right,
 .contact-page .bottom-row .box5-left,
 .contact-page .bottom-row .box5-right,
 .cart-page .bottom-row .box5-left,
@@ -146,8 +144,6 @@ body {
 .social-icons a,
 .box button,
 .contact-page form button[type="submit"],
-.about-page .bottom-row .box5-left,
-.about-page .bottom-row .box5-right,
 .contact-page .bottom-row .box5-left,
 .contact-page .bottom-row .box5-right,
 .cart-page .bottom-row .box5-left,
@@ -172,8 +168,6 @@ body {
 .social-icons a:hover,
 .box button:hover,
 .contact-page form button[type="submit"]:hover,
-.about-page .bottom-row .box5-left:hover,
-.about-page .bottom-row .box5-right:hover,
 .contact-page .bottom-row .box5-left:hover,
 .contact-page .bottom-row .box5-right:hover,
 .cart-page .bottom-row .box5-left:hover,
@@ -199,8 +193,6 @@ body {
 .box button:active,
 .shop-page .box4and6 button:active,
 .contact-page form button[type="submit"]:active,
-.about-page .bottom-row .box5-left:active,
-.about-page .bottom-row .box5-right:active,
 .contact-page .bottom-row .box5-left:active,
 .contact-page .bottom-row .box5-right:active,
 .cart-page .bottom-row .box5-left:active,
@@ -240,8 +232,6 @@ body {
 }
 
 /* SPECIAL LARGE GOLD BOX LINKS (PAGE SECTIONS) */
-.about-page .box5-left.box-link,
-.about-page .box5-right.box-link,
 .contact-page .box5-left.box-link,
 .contact-page .box5-right.box-link {
   border-radius: 12px;
@@ -542,8 +532,6 @@ a.box.box-link {
 }
 
 /* GOLD VARIANT FOR BOX5 IN PAGES */
-.about-page .bottom-row .box5-left,
-.about-page .bottom-row .box5-right,
 .contact-page .bottom-row .box5-left,
 .contact-page .bottom-row .box5-right {
   color: #fffbe6;
@@ -553,8 +541,6 @@ a.box.box-link {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
-.about-page .bottom-row .box5-left:hover,
-.about-page .bottom-row .box5-right:hover,
 .contact-page .bottom-row .box5-left:hover,
 .contact-page .bottom-row .box5-right:hover {
   background: linear-gradient(135deg, #f8d86a, #d4af37);
@@ -563,8 +549,6 @@ a.box.box-link {
   box-shadow: 0 8px 16px rgba(212, 175, 55, 0.4);
 }
 
-.about-page .bottom-row .box5-left:active,
-.about-page .bottom-row .box5-right:active,
 .contact-page .bottom-row .box5-left:active,
 .contact-page .bottom-row .box5-right:active {
   transform: scale(0.95);
@@ -803,8 +787,6 @@ button[type="submit"] {
 }
 
 /* BIG GOLD ACTION BUTTONS IN BOTTOM ROW (SHOP/ABOUT/CONTACT/CART OVERRIDE) */
-.about-page .bottom-row .box5-left,
-.about-page .bottom-row .box5-right,
 .contact-page .bottom-row .box5-left,
 .contact-page .bottom-row .box5-right,
 .cart-page .bottom-row .box5-left,
@@ -986,44 +968,6 @@ button[type="submit"] {
 /* FIX GAP */
 .other-pages .middle-section {
   gap: 5px !important;
-}
-
-/* ABOUT PAGE */
-.about-page .box1 h1,
-.box3 h4,
-.about-page .box4and6 h1 {
-  font-weight: black;
-  color: black !important;
-}
-
-.about-page .box4and6 h1 {
-  font-size: x-large;
-}
-
-.box4and6 ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  margin-left: 50px;
-}
-
-.box4and6 li {
-  font-size: 1.05rem;
-  color: #222;
-  font-weight: 500;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  transition: color 0.3s ease, transform 0.25s ease;
-}
-
-.box4and6 li:last-child {
-  border-bottom: none;
-}
-
-.box4and6 li:hover {
-  color: #d4af37;
-  transform: translateX(6px);
 }
 
 /* CONTACT PAGE */
@@ -1409,41 +1353,6 @@ button[type="submit"] {
     height: 100% !important;
   }
 
-  .about-mobile-story {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
-    height: 100%;
-    width: 100%;
-    padding: 1rem 1.2rem;
-    box-sizing: border-box;
-    position: relative;
-  }
-
-  .about-mobile-story h2 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin: 0 0 0.6rem;
-    color: black;
-    flex-shrink: 0; 
-  }
-
-  .about-mobile-story .scroll-content {
-    flex: 1;
-    overflow-y: auto;
-    padding-right: 0.3rem;
-    box-sizing: border-box;
-  }
-
-  .about-mobile-story p {
-    font-size: 0.9rem;
-    line-height: 1.45;
-    color: black;
-    font-weight: normal;
-    margin: 0;
-  }
-
   .other-pages .right-column {
     display: grid;
     grid-template-rows: 1fr 1.5fr; 
@@ -1455,50 +1364,6 @@ button[type="submit"] {
   .other-pages .merged-bottom {
     overflow: hidden;
     min-height: 0; 
-  }
-
-  .about-mobile-services {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
-    height: 100%;
-    width: 100%;
-    padding: 1rem 1.2rem;
-    box-sizing: border-box;
-    position: relative;
-  }
-
-  .about-mobile-services h2 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: black;
-    margin: 0 0 0.6rem;
-  }
-
-  .about-mobile-services ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .about-mobile-services li {
-    font-size: 0.9rem;
-    line-height: 1.45;
-    color: black;
-    font-weight: normal;
-    padding: 0.4rem 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    transition: color 0.3s ease, transform 0.25s ease;
-  }
-
-  .about-mobile-services li:last-child {
-    border-bottom: none;
-  }
-
-  .about-mobile-services li:hover {
-    color: #d4af37;
-    transform: translateX(5px);
   }
 
   .contact-page .merged-bottom img {

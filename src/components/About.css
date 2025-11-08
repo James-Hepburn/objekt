@@ -1,0 +1,187 @@
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shimmer-hover {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.bottom-row .box5-left,
+.bottom-row .box5-right {
+    background: linear-gradient(135deg, #e2c35d, #caa432, #f0d879);
+    background-size: 200% 200%;
+    color: #fffdf2;
+    border: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: shimmer 6s ease-in-out infinite;
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.25),
+        0 0 8px rgba(212, 175, 55, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    cursor: pointer;
+    min-width: 70px;
+    min-height: 70px;
+    padding: 0;
+}
+
+.bottom-row .box5-left:hover,
+.bottom-row .box5-right:hover {
+    background: linear-gradient(135deg, #f8e27f, #d8b84a, #b98a1d);
+    background-size: 300% 300%;
+    color: #fff;
+    transform: translateY(-2px) scale(1.07);
+    box-shadow:
+        0 10px 22px rgba(212, 175, 55, 0.5),
+        0 0 12px rgba(255, 220, 120, 0.6);
+    animation: shimmer-hover 3s ease-in-out infinite;
+}
+
+.bottom-row .box5-left:active,
+.bottom-row .box5-right:active {
+    transform: scale(0.96);
+    box-shadow: 0 3px 6px rgba(212, 175, 55, 0.3);
+}
+
+.box5-left.box-link,
+.box5-right.box-link {
+    border-radius: 12px;
+    font-size: 2rem;
+    font-weight: 700;
+    width: 100%;
+    height: 100%;
+}
+
+.other-pages main {
+  height: 200vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box1 h1,
+.box3 h4,
+.box4and6 h1 {
+  font-weight: black;
+  color: black !important;
+}
+
+.box4and6 h1 {
+  font-size: x-large;
+}
+
+.box4and6 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  margin-left: 50px;
+}
+
+.box4and6 li {
+  font-size: 1.05rem;
+  color: #222;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  transition: color 0.3s ease, transform 0.25s ease;
+}
+
+.box4and6 li:last-child {
+  border-bottom: none;
+}
+
+.box4and6 li:hover {
+  color: #d4af37;
+  transform: translateX(6px);
+}
+
+@media screen and (max-width: 900px) {
+    .about-mobile-story {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        height: 100%;
+        width: 100%;
+        padding: 1rem 1.2rem;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    .about-mobile-story h2 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin: 0 0 0.6rem;
+        color: black;
+        flex-shrink: 0; 
+    }
+
+    .about-mobile-story .scroll-content {
+        flex: 1;
+        overflow-y: auto;
+        padding-right: 0.3rem;
+        box-sizing: border-box;
+    }
+
+    .about-mobile-story p {
+        font-size: 0.9rem;
+        line-height: 1.45;
+        color: black;
+        font-weight: normal;
+        margin: 0;
+    }
+
+    .about-mobile-services {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        height: 100%;
+        width: 100%;
+        padding: 1rem 1.2rem;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    .about-mobile-services h2 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: black;
+        margin: 0 0 0.6rem;
+    }
+
+    .about-mobile-services ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .about-mobile-services li {
+        font-size: 0.9rem;
+        line-height: 1.45;
+        color: black;
+        font-weight: normal;
+        padding: 0.4rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        transition: color 0.3s ease, transform 0.25s ease;
+    }
+
+    .about-mobile-services li:last-child {
+        border-bottom: none;
+    }
+
+    .about-mobile-services li:hover {
+        color: #d4af37;
+        transform: translateX(5px);
+    }
+}

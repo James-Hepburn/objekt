@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./BlackPage.css";
 import "./CommonStyles.css";
+import "./About.css";
 
 export default function About() {
   const navigate = useNavigate();
