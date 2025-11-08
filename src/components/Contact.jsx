@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./BlackPage.css";
 import "./CommonStyles.css";
+import "./Contact.css";
 import emailIcon from "/email.png";
 import phoneIcon from "/phone.png";
 
