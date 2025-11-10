@@ -107,9 +107,6 @@ body {
 .contact-btn,
 .right-nav .nav-btn,
 .social-icons a,
-.box button,
-.cart-page .bottom-row .box5-left,
-.cart-page .bottom-row .box5-right,
 .menu-toggle,
 .cart-icon {
   background: linear-gradient(135deg, #e2c35d, #caa432, #f0d879);
@@ -143,9 +140,6 @@ body {
 .contact-btn:hover,
 .right-nav .nav-btn:hover,
 .social-icons a:hover,
-.box button:hover,
-.cart-page .bottom-row .box5-left:hover,
-.cart-page .bottom-row .box5-right:hover,
 .menu-toggle:hover,
 .cart-icon:hover {
   background: linear-gradient(135deg, #f8e27f, #d8b84a, #b98a1d);
@@ -168,10 +162,6 @@ body {
 .contact-btn:active,
 .right-nav .nav-btn:active,
 .social-icons a:active,
-.box button:active,
-.shop-page .box4and6 button:active,
-.cart-page .bottom-row .box5-left:active,
-.cart-page .bottom-row .box5-right:active,
 .menu-toggle:active,
 .cart-icon:active {
   transform: scale(0.96);
