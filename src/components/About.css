@@ -98,6 +98,16 @@
   transform: translateX(6px);
 }
 
+.box2,
+.box3,
+.box4and6,
+.box5-left,
+.box5-right {
+  background: linear-gradient(135deg, #cfd8d5, #a7d3cf);
+  background-size: 200% 200%;
+  animation: gradientShift 12s ease-in-out infinite !important;
+}
+
 @media screen and (max-width: 900px) {
     .about-mobile-story {
         display: flex;
