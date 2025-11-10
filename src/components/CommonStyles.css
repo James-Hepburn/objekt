@@ -53,11 +53,6 @@ body {
   }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
 /* HEADER / NAV */
 .home-header {
   position: fixed;
@@ -132,19 +127,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-/* EXTENDED GOLD ROUNDED STYLE */
-.nav-btn,
-.contact-btn,
-.right-nav .nav-btn,
-.social-icons a,
-.box button,
-.cart-page .bottom-row .box5-left,
-.cart-page .bottom-row .box5-right,
-.cart-icon {
   border-radius: 30px;
-  font-weight: 600;
 }
 
 .nav-btn {
@@ -162,7 +145,9 @@ body {
 .social-icons a:hover,
 .box button:hover,
 .cart-page .bottom-row .box5-left:hover,
-.cart-page .bottom-row .box5-right:hover {
+.cart-page .bottom-row .box5-right:hover,
+.menu-toggle:hover,
+.cart-icon:hover {
   background: linear-gradient(135deg, #f8e27f, #d8b84a, #b98a1d);
   background-size: 300% 300%;
   color: #fff;
@@ -181,10 +166,14 @@ body {
 /* ACTIVE STATE FOR GOLD BUTTONS */
 .nav-btn:active,
 .contact-btn:active,
+.right-nav .nav-btn:active,
+.social-icons a:active,
 .box button:active,
 .shop-page .box4and6 button:active,
 .cart-page .bottom-row .box5-left:active,
-.cart-page .bottom-row .box5-right:active {
+.cart-page .bottom-row .box5-right:active,
+.menu-toggle:active,
+.cart-icon:active {
   transform: scale(0.96);
   box-shadow: 0 3px 6px rgba(212, 175, 55, 0.3);
 }
@@ -219,7 +208,7 @@ body {
   letter-spacing: 0.3px;
 }
 
-/* MENU TOGGLE (inherits gold gradient above) */
+/* MENU TOGGLE */
 .menu-toggle {
   flex-direction: column;
   gap: 6px;
@@ -229,21 +218,6 @@ body {
   border: none;
   transition: all 0.3s ease;
   z-index: 15;
-}
-
-.menu-toggle:hover {
-  background: linear-gradient(135deg, #f8e27f, #d8b84a, #b98a1d);
-  background-size: 300% 300%;
-  transform: scale(1.07);
-  box-shadow:
-    0 10px 22px rgba(212, 175, 55, 0.5),
-    0 0 12px rgba(255, 220, 120, 0.6);
-  animation: shimmer-hover 3s ease-in-out infinite;
-}
-
-.menu-toggle:active {
-  transform: scale(0.95);
-  box-shadow: 0 3px 6px rgba(212, 175, 55, 0.3);
 }
 
 .menu-toggle .bar {
@@ -429,6 +403,16 @@ body {
     0 0 16px rgba(212, 175, 55, 0.4);
 }
 
+.box2,
+.box3,
+.box4and6,
+.box5-left,
+.box5-right {
+  background: linear-gradient(135deg, #cfd8d5, #a7d3cf);
+  background-size: 200% 200%;
+  animation: gradientShift 12s ease-in-out infinite;
+}
+
 .box h2 {
   font-size: 1.4rem;
   color: #333;
@@ -442,7 +426,7 @@ body {
   margin: 0 0 1rem;
 }
 
-/* BOX LINKS / CTA BLOCKS */
+/* BOX LINKS */
 .box.box-link {
   display: flex;
   align-items: center;
@@ -477,7 +461,7 @@ a.box.box-link {
   height: 50px;
 }
 
-/* ROUND BUTTONS IN bottom-row (ARROWS ETC.) */
+/* ROUND BUTTONS IN bottom-row */
 .bottom-row button {
   width: 60px;
   height: 60px;
@@ -540,21 +524,13 @@ a.box.box-link {
 
 /* FORM GENERAL */
 form {
-  width: 80%;
+  width: 100%;
   max-width: 420px;
   transform: scale(0.9);
   transform-origin: center top;
-  border: 2px solid rgba(212, 175, 55, 0.3);
-  border-radius: 12px;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
   padding: 1.6rem;
   transition: transform 0.25s ease;
   margin: 0 auto 20px;
-}
-
-form:hover {
-  transform: scale(0.93);
 }
 
 .box2 h2 {
@@ -661,30 +637,6 @@ button[type="submit"] {
   animation: metallicPulse 1.5s ease-in-out;
 }
 
-/* BIG GOLD ACTION BUTTONS IN BOTTOM ROW (SHOP/ABOUT/CONTACT/CART OVERRIDE) */
-.cart-page .bottom-row .box5-left,
-.cart-page .bottom-row .box5-right {
-  background: linear-gradient(135deg, #e2c35d, #caa432, #f0d879) !important;
-  background-size: 200% 200%;
-  color: #fffdf2 !important;
-  border: none !important;
-  border-radius: 30px !important;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
-  box-shadow:
-    0 4px 12px rgba(0, 0, 0, 0.25),
-    0 0 8px rgba(212, 175, 55, 0.3);
-  animation: shimmer 6s ease-in-out infinite;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  min-width: 70px;
-  min-height: 70px;
-  padding: 0;
-}
-
 /* CART ICON IN HEADER (inherits gold base and border-radius) */
 .cart-icon {
   position: relative;
@@ -763,7 +715,7 @@ button[type="submit"] {
   --font-weight-normal: 400;
   --font-weight-bold: 700;
 
-  /* Desktop sizes (chosen balanced midpoints) */
+  /* Desktop sizes */
   --font-size-h1: 64px;
   --font-size-h2: 42px;
   --font-size-h3: 27px;
@@ -999,7 +951,7 @@ button[type="submit"] {
     height: 40px;
   }
 
-  .box1 .box-inner{
+  .box1 .box-inner {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
