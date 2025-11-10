@@ -297,7 +297,7 @@
   100% { background-position: 0% 50%; }
 }
 
-.box3::before {
+.home-page .box3::before {
   content: "";
   position: absolute;
   top: 0;

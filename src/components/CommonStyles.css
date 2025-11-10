@@ -309,10 +309,7 @@ body {
   align-items: stretch;
 }
 
-.other-pages .right-column {
-  gap: 7px !important
-}
-
+.other-pages .right-column,
 .contact-page .right-column {
   gap: 20px !important
 }
