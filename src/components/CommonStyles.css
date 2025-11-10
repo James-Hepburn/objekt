@@ -89,11 +89,13 @@ body {
   display: flex;
   flex-direction: column;
   width: 220px;
-  background: linear-gradient(135deg, #e2c35d, #caa432, #f0d879);
+  background: linear-gradient(135deg, #00b1d2, #007ea6, #4cd3f0);
+  background-size: 200% 200%;
   backdrop-filter: blur(10px);
-  border-left: 1px solid rgba(212, 175, 55, 0.2);
+  border-left: 1px solid rgba(0, 177, 210, 0.3);
   transform: translateX(100%);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: shimmerBlue 8s ease-in-out infinite;
   box-shadow: -6px 0 20px rgba(0, 0, 0, 0.45);
 }
 
@@ -102,12 +104,9 @@ body {
   box-shadow: -10px 0 25px rgba(0, 0, 0, 0.5);
 }
 
-/* GOLD GRADIENT SHARED BUTTON STYLE (BASE) */
-.nav-btn,
+/* GOLD GRADIENT SHARED BUTTON STYLE */
 .contact-btn,
-.right-nav .nav-btn,
 .social-icons a,
-.menu-toggle,
 .cart-icon {
   background: linear-gradient(135deg, #e2c35d, #caa432, #f0d879);
   background-size: 200% 200%;
@@ -127,6 +126,27 @@ body {
   border-radius: 30px;
 }
 
+.nav-btn,
+.menu-toggle,
+.right-nav .nav-btn {
+  background: linear-gradient(135deg, #00b1d2, #007ea6, #4cd3f0);
+  background-size: 200% 200%;
+  color: #eafcff;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: shimmerBlue 6s ease-in-out infinite;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.25),
+    0 0 8px rgba(0, 177, 210, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+}
+
 .nav-btn {
   background: transparent !important;
   border-radius: 0 !important;
@@ -136,11 +156,8 @@ body {
 }
 
 /* HOVER STYLE FOR GOLD BUTTONS */
-.nav-btn:hover,
 .contact-btn:hover,
-.right-nav .nav-btn:hover,
 .social-icons a:hover,
-.menu-toggle:hover,
 .cart-icon:hover {
   background: linear-gradient(135deg, #f8e27f, #d8b84a, #b98a1d);
   background-size: 300% 300%;
@@ -157,15 +174,44 @@ body {
   background: rgba(255, 255, 255, 0.22) !important;
 }
 
+.nav-btn:hover,
+.menu-toggle:hover,
+.right-nav .nav-btn:hover {
+  background: linear-gradient(135deg, #4cd3f0, #00b1d2, #009fc1);
+  background-size: 300% 300%;
+  color: #fff;
+  transform: translateY(-2px) scale(1.07);
+  box-shadow:
+    0 10px 22px rgba(0, 177, 210, 0.6),
+    0 0 14px rgba(76, 211, 240, 0.8);
+  animation: shimmerBlueHover 3s ease-in-out infinite;
+}
+
 /* ACTIVE STATE FOR GOLD BUTTONS */
-.nav-btn:active,
 .contact-btn:active,
-.right-nav .nav-btn:active,
 .social-icons a:active,
-.menu-toggle:active,
 .cart-icon:active {
   transform: scale(0.96);
   box-shadow: 0 3px 6px rgba(212, 175, 55, 0.3);
+}
+
+.nav-btn:active,
+.menu-toggle:active,
+.right-nav .nav-btn:active {
+  transform: scale(0.96);
+  box-shadow: 0 3px 6px rgba(0, 177, 210, 0.3);
+}
+
+@keyframes shimmerBlue {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shimmerBlueHover {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* BUTTON-SPECIFIC SIZING */
